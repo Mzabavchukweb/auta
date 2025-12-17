@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="currentColor">
+  <g>
+    <!-- BMW roundel simplified -->
+    <circle cx="30" cy="30" r="28" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="30" cy="30" r="24" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M30 6 L30 30 L6 30 A24 24 0 0 0 30 54 L30 30 L54 30 A24 24 0 0 0 30 6 Z" fill="currentColor" opacity="0.15"/>
+  </g>
+</svg>
+

@@ -1,0 +1,132 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": false,
+    "useRootPaddingAwareAlignments": false,
+    "layout": {
+      "contentSize": "none",
+      "wideSize": "none"
+    },
+    "spacing": {
+      "padding": false,
+      "margin": false
+    },
+    "typography": {
+      "fontSizes": [],
+      "fontFamilies": [],
+      "fontStyle": false,
+      "fontWeight": false,
+      "lineHeight": false,
+      "textDecoration": false,
+      "textTransform": false,
+      "letterSpacing": false
+    },
+    "color": {
+      "custom": false,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "duotone": []
+    },
+    "border": {
+      "color": false,
+      "radius": false,
+      "style": false,
+      "width": false
+    },
+    "blocks": {
+      "core/paragraph": {
+        "spacing": {
+          "padding": false,
+          "margin": false
+        },
+        "typography": {
+          "fontSize": false,
+          "fontFamily": false,
+          "fontStyle": false,
+          "fontWeight": false,
+          "lineHeight": false,
+          "textDecoration": false,
+          "textTransform": false,
+          "letterSpacing": false
+        },
+        "color": {
+          "text": false,
+          "background": false,
+          "link": false
+        }
+      },
+      "core/heading": {
+        "spacing": {
+          "padding": false,
+          "margin": false
+        },
+        "typography": {
+          "fontSize": false,
+          "fontFamily": false,
+          "fontStyle": false,
+          "fontWeight": false,
+          "lineHeight": false,
+          "textDecoration": false,
+          "textTransform": false,
+          "letterSpacing": false
+        },
+        "color": {
+          "text": false,
+          "background": false,
+          "link": false
+        }
+      },
+      "core/image": {
+        "spacing": {
+          "padding": false,
+          "margin": false
+        },
+        "border": {
+          "color": false,
+          "radius": false,
+          "style": false,
+          "width": false
+        }
+      },
+      "core/list": {
+        "spacing": {
+          "padding": false,
+          "margin": false
+        },
+        "typography": {
+          "fontSize": false,
+          "fontFamily": false,
+          "fontStyle": false,
+          "fontWeight": false,
+          "lineHeight": false
+        },
+        "color": {
+          "text": false,
+          "background": false
+        }
+      },
+      "core/quote": {
+        "spacing": {
+          "padding": false,
+          "margin": false
+        },
+        "typography": {
+          "fontSize": false,
+          "fontFamily": false,
+          "fontStyle": false,
+          "fontWeight": false,
+          "lineHeight": false
+        },
+        "color": {
+          "text": false,
+          "background": false
+        }
+      }
+    }
+  },
+  "templateParts": []
+}
+

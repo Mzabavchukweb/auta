@@ -1,0 +1,15 @@
+{
+  "default": {
+    "down_payment_pct": 10,
+    "term_months": 48,
+    "residual_pct": 1
+  },
+  "limits": {
+    "down_payment_pct": [0, 45],
+    "term_months": [12, 60],
+    "residual_pct": [1, 35]
+  },
+  "apr_pct": 9.9,
+  "note": "Parametry orientacyjne. Ostateczne warunki zależą od weryfikacji leasingodawcy."
+}
+

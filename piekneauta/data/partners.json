@@ -1,0 +1,51 @@
+[
+  {
+    "type": "leasing",
+    "name": "mLeasing",
+    "logo": "mleasing-logo.png",
+    "url": "https://mleasing.pl"
+  },
+  {
+    "type": "leasing",
+    "name": "PKO Leasing",
+    "logo": "pko-leasing-logo.png",
+    "url": "https://pkoleasing.pl"
+  },
+  {
+    "type": "leasing",
+    "name": "Santander Consumer Multirent",
+    "logo": "santander-logo.png",
+    "url": "https://santanderconsumer.pl"
+  },
+  {
+    "type": "leasing",
+    "name": "ING Lease",
+    "logo": "ing-lease-logo.png",
+    "url": "https://inglease.pl"
+  },
+  {
+    "type": "insurance",
+    "name": "PZU",
+    "logo": "pzu-logo.png",
+    "url": "https://pzu.pl"
+  },
+  {
+    "type": "insurance",
+    "name": "Allianz",
+    "logo": "allianz-logo.png",
+    "url": "https://allianz.pl"
+  },
+  {
+    "type": "insurance",
+    "name": "Ergo Hestia",
+    "logo": "ergo-logo.png",
+    "url": "https://ergohestia.pl"
+  },
+  {
+    "type": "insurance",
+    "name": "Warta",
+    "logo": "warta-logo.png",
+    "url": "https://warta.pl"
+  }
+]
+

@@ -1,0 +1,53 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0B1220"/>
+  
+  <!-- Subtle pattern -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1F2937" stroke-width="1" opacity="0.1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Gradient overlay -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B1220;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1F2937;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad)"/>
+  
+  <!-- Car icon -->
+  <g transform="translate(100, 200)">
+    <path d="M189.92 60.01C189.72 54.42 181.16 50 175.5 50h-110c-6.6 0-12.1 4.2-14.2 10.1L30 120v80c0 5.5 4.5 10 10 10h10c5.5 0 10-4.5 10-10v-10h120v10c0 5.5 4.5 10 10 10h10c5.5 0 10-4.5 10-10v-80l-20.08-59.99zM65 160c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm110 0c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM50 110l15-45h110l15 45H50z" 
+    fill="#2663F2" opacity="0.15"/>
+  </g>
+  
+  <!-- Logo text -->
+  <text x="600" y="280" font-family="Inter, sans-serif" font-size="72" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    PiękneAuta.pl
+  </text>
+  
+  <!-- Divider -->
+  <line x1="400" y1="320" x2="800" y2="320" stroke="#2663F2" stroke-width="4" opacity="0.6"/>
+  
+  <!-- Tagline -->
+  <text x="600" y="375" font-family="Inter, sans-serif" font-size="32" font-weight="400" fill="#E5E7EB" text-anchor="middle">
+    Samochody premium sprawdzone do ostatniej śrubki
+  </text>
+  
+  <!-- Badge -->
+  <g transform="translate(450, 420)">
+    <rect x="0" y="0" width="300" height="60" rx="30" fill="#2663F2" opacity="0.2"/>
+    <rect x="2" y="2" width="296" height="56" rx="28" fill="none" stroke="#2663F2" stroke-width="2"/>
+    <text x="150" y="38" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#2663F2" text-anchor="middle">
+      28 LAT DOŚWIADCZENIA
+    </text>
+  </g>
+  
+  <!-- Bottom info -->
+  <text x="600" y="560" font-family="Inter, sans-serif" font-size="24" font-weight="500" fill="#9CA3AF" text-anchor="middle">
+    📞 502 42 82 82 • ✉ twojleasing@me.com
+  </text>
+</svg>
+

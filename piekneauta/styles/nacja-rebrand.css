@@ -1,0 +1,1614 @@
+/* ====================================================================
+   🎨 NACJA DESIGN REBRAND - PiękneAuta.pl
+   Absolutna spójność typograficzna i kolorystyczna
+   ==================================================================== */
+
+/* ====================================================================
+   📚 FONTY - Import
+   ==================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap');
+
+/* ====================================================================
+   📝 TYPOGRAFIA - ZASADY PODSTAWOWE
+   ==================================================================== */
+
+/* BASE - WSZYSTKIE teksty AVENIR NEXT CONDENSED */
+* {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+body {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
+  background-color: #f3f1ee !important;
+  color: #2d2d2d !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 1.6 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* ====================================================================
+   🎨 SEPARATORY SEKCJI - Delikatne linie między sekcjami
+   ==================================================================== */
+
+/* Wszystkie sekcje (oprócz pierwszej) dostają górną linię */
+body > section:not(:first-of-type),
+main section:not(:first-child) {
+  border-top: 1px solid #d8d4cf !important;
+}
+
+/* Wyjątek: sekcje z ciemnym tłem */
+body > section[style*="background-color: #212121"],
+main section[style*="background-color: #212121"] {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Sekcje z klasą bg-primary (ciemne) */
+body > section.bg-primary,
+main section.bg-primary {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ====================================================================
+   🎯 HEADER & FOOTER - Spójność typograficzna
+   ==================================================================== */
+
+/* Wszystkie linki w nawigacji - jednolite style */
+header nav a,
+header nav a *,
+header nav a.font-bold,
+header nav a.uppercase,
+footer a,
+footer a * {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+/* Hover states - spójne dla wszystkich linków */
+header nav a:hover,
+header nav a.font-bold:hover,
+header nav a.uppercase:hover,
+footer a:hover {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+/* Nagłówki w footerze - Avenir (nie Instrument Serif) */
+footer h3,
+footer h4,
+footer h5 {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+/* ====================================================================
+   🎨 CTA SECTION - Wyraźne białe obramowanie dla przycisku
+   ==================================================================== */
+
+/* Przycisk "Formularz kontaktowy" w sekcji CTA - jasne obramowanie */
+section[style*="background-color: #212121"] a[href="/kontakt"] {
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+section[style*="background-color: #212121"] a[href="/kontakt"]:hover {
+  background-color: #ffffff !important;
+  color: #212121 !important;
+  border-color: #ffffff !important;
+}
+
+/* ====================================================================
+   🎯 NAGŁÓWKI - Instrument Serif (italic, uppercase, letter-spacing)
+   ==================================================================== */
+
+/* WSZYSTKIE H1-H6 - Instrument Serif italic UPPERCASE (oprócz wyjątków) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: #212121 !important;
+}
+
+/* WYJĄTEK: małe labele z .font-semibold (Telefon, Email) - Avenir normal */
+h3.font-semibold:not(.text-xl):not(.text-2xl):not(.text-3xl),
+h4.font-semibold:not(.text-xl):not(.text-2xl):not(.text-3xl) {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  color: #2d2d2d !important;
+}
+
+/* Footer - WSZYSTKO domyślnie BIAŁE */
+footer,
+footer *,
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
+footer div, footer span, footer p,
+footer a div, footer a span {
+  color: #ffffff !important;
+}
+
+/* Brochure section - białe nagłówki */
+.bg-primary h3.text-white,
+.bg-primary .text-white {
+  color: #ffffff !important;
+}
+
+/* Wyjątek dla szarych tekstów w footerze */
+footer .text-gray-400,
+footer .text-gray-500 {
+  color: #b8b8b8 !important;
+}
+
+/* Footer nawigacja - BEZ hover efektów */
+footer ul li a {
+  transition: none !important;
+}
+
+footer ul li a:hover {
+  color: #b8b8b8 !important;
+}
+
+/* Header linki - bez scale, tylko podkreślenie */
+header nav a,
+header nav a[class*="hover:scale"] {
+  transform: none !important;
+  transition: border-color 0.2s ease, color 0.2s ease !important;
+}
+
+header nav a:hover,
+header nav a[class*="hover:scale"]:hover {
+  transform: none !important;
+}
+
+/* Desktop navigation - podkreślenie przy hover */
+header nav .hidden.lg\\:flex a:not([href^="tel:"]) {
+  border-bottom: 2px solid transparent !important;
+}
+
+header nav .hidden.lg\\:flex a:not([href^="tel:"]):hover {
+  border-bottom-color: currentColor !important;
+  background: transparent !important;
+}
+
+/* Mobile menu - bez translate i active states */
+header .lg\\:hidden a {
+  transform: none !important;
+}
+
+header .lg\\:hidden a:hover {
+  transform: none !important;
+}
+
+/* USUWAM WSZYSTKIE ACTIVE STATES */
+header nav a.bg-primary,
+header nav a.text-white,
+header nav a.shadow-sm {
+  background: transparent !important;
+  color: #4B5563 !important;
+  box-shadow: none !important;
+}
+
+/* CAŁKOWITE USUNIĘCIE ZIELONEGO KOLORU */
+.bg-green-500,
+.bg-green-50, 
+.bg-green-100, 
+.bg-green-600,
+.text-green-500, 
+.text-green-600,
+.border-green-500,
+.bg-green-500\/90,
+span.bg-green-500\/90 {
+  background-color: #C5A572 !important;
+  color: #ffffff !important;
+}
+
+/* NAPRAWIAM WIDOCZNOŚĆ TEKSTU W BROSZURZE - TŁO CIEMNE = TEKST JASNY */
+.bg-primary h3,
+.bg-primary .text-white,
+.bg-primary p,
+.bg-primary svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Przycisk w broszurze - białe tło, ciemny tekst */
+.bg-primary a.bg-white,
+.bg-primary .bg-white {
+  background-color: #ffffff !important;
+  color: #0B1220 !important;
+}
+
+/* Badge DOSTĘPNY na ciemnym tle - musi być widoczny */
+.bg-primary span.bg-accent,
+.bg-primary .bg-accent {
+  background-color: #C5A572 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ====================================================================
+   🖼️ CAR CARD SLIDERS - Zdjęcia na kartach
+   ==================================================================== */
+
+.car-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+
+.car-slider .car-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.car-slider .car-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.car-slider .car-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Badge DOSTĘPNY ponad sliderem */
+.relative .absolute.top-3,
+article .relative .absolute {
+  z-index: 20;
+  position: absolute;
+}
+
+/* ====================================================================
+   🎬 HERO SLIDER - Strona główna
+   ==================================================================== */
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+
+.hero-slider .slider-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 2.5s ease-in-out;
+}
+
+.hero-slider .slider-image.active {
+  opacity: 1;
+}
+
+.hero-slider .slider-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hierarchia rozmiarów */
+h1 {
+  font-size: 3.5rem !important;
+  line-height: 1.1 !important;
+}
+
+h2 {
+  font-size: 2.5rem !important;
+  line-height: 1.2 !important;
+}
+
+h3 {
+  font-size: 1.875rem !important;
+  line-height: 1.3 !important;
+}
+
+h4 {
+  font-size: 1.5rem !important;
+  line-height: 1.4 !important;
+}
+
+h5 {
+  font-size: 1.25rem !important;
+  line-height: 1.4 !important;
+}
+
+h6 {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 2rem !important; }
+  h3 { font-size: 1.5rem !important; }
+  h4 { font-size: 1.25rem !important; }
+}
+
+/* ====================================================================
+   🏷️ LOGO - Instrument Serif (wszędzie)
+   ==================================================================== */
+
+header .text-2xl,
+header .font-bold,
+footer .text-3xl,
+footer .font-bold,
+.text-2xl.font-bold.text-primary,
+.text-3xl.font-bold.text-white,
+.text-2xl.font-bold.tracking-tight,
+.text-3xl.font-bold.tracking-tight {
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* LOGO W HEADERZE - MUSI BYĆ CZARNE! */
+header .text-2xl,
+header .text-primary,
+header .font-bold,
+header div.text-2xl,
+header .text-2xl.font-bold,
+header .tracking-tight {
+  color: #212121 !important;
+  background-color: transparent !important;
+}
+
+/* LOGO W FOOTERZE - MUSI BYĆ BIAŁE! */
+footer .text-3xl,
+footer a .text-3xl,
+footer .font-bold,
+footer a .font-bold,
+footer div.text-3xl,
+footer a div.text-3xl,
+footer .text-3xl.font-bold,
+footer a div.text-3xl.font-bold,
+footer a div,
+footer a div.tracking-tight {
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+/* ====================================================================
+   📄 TEKSTY - ABSOLUTNA SPÓJNOŚĆ - Avenir normal
+   ==================================================================== */
+
+/* WSZYSTKIE teksty (nie nagłówki) - Avenir Next Condensed */
+p, p *, p span,
+span:not(h1 span):not(h2 span):not(h3 span):not(h4 span):not(h5 span):not(h6 span),
+div:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+label, label *,
+a:not(.font-bold),
+li, li *,
+td, th {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  text-transform: none !important;
+}
+
+/* Paragrafy - spójny kolor i spacing */
+p {
+  color: #6b6b6b !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  font-style: normal !important;
+  text-transform: none !important;
+}
+
+/* Wszystkie spany NIE w nagłówkach - Avenir Next Condensed */
+span:not(h1 *):not(h2 *):not(h3 *):not(h4 *):not(h5 *):not(h6 *) {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  text-transform: none !important;
+}
+
+/* ====================================================================
+   🔘 PRZYCISKI I NAWIGACJA - Avenir (bez italic, bez uppercase)
+   ==================================================================== */
+
+button,
+a.inline-flex,
+.inline-flex,
+nav a {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* ====================================================================
+   📋 FORMULARZE - Avenir
+   ==================================================================== */
+
+input,
+textarea,
+select,
+option {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  background-color: #f3f1ee !important;
+  border-color: #ddd9d3 !important;
+  color: #2d2d2d !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #212121 !important;
+  outline: none !important;
+}
+
+label {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  color: #4a4a4a !important;
+}
+
+/* ====================================================================
+   🎨 KOLORY - Tylko czarny, biały, beż, szary
+   ==================================================================== */
+
+/* TŁO STRONY - beż */
+html,
+body,
+main {
+  background-color: #f3f1ee !important;
+}
+
+/* TŁA BIAŁE */
+.bg-white {
+  background-color: #f3f1ee !important;
+}
+
+/* TŁA SZARE/BEŻOWE */
+.bg-gray-50 {
+  background-color: #f9f8f6 !important;
+}
+
+.bg-gray-100 {
+  background-color: #f5f3f0 !important;
+}
+
+.bg-gray-800 {
+  background-color: #2d2d2d !important;
+}
+
+/* CZARNY - primary */
+.bg-primary {
+  background-color: #212121 !important;
+  color: #ffffff !important;
+}
+
+.text-primary {
+  color: #212121 !important;
+  background-color: transparent !important;
+}
+
+/* WYJĄTEK - text-primary w footerze = BIAŁE */
+footer .text-primary,
+footer .text-primary *,
+footer a .text-primary {
+  color: #ffffff !important;
+}
+
+.border-primary {
+  border-color: #212121 !important;
+}
+
+.hover\:bg-primary:hover {
+  background-color: #212121 !important;
+  color: #ffffff !important;
+}
+
+.hover\:text-primary:hover {
+  color: #212121 !important;
+}
+
+.hover\:border-primary:hover {
+  border-color: #212121 !important;
+}
+
+/* AKCENT - ciemny szary */
+.bg-accent {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+}
+
+.text-accent {
+  color: #2d2d2d !important;
+}
+
+.border-accent {
+  border-color: #2d2d2d !important;
+}
+
+.hover\:bg-accent:hover,
+.hover\:bg-accent\/90:hover {
+  background-color: #212121 !important;
+  color: #ffffff !important;
+}
+
+.hover\:text-accent:hover {
+  color: #212121 !important;
+}
+
+.bg-accent\/5 {
+  background-color: rgba(45, 45, 45, 0.05) !important;
+}
+
+.border-accent\/30 {
+  border-color: rgba(45, 45, 45, 0.3) !important;
+}
+
+.border-accent\/50 {
+  border-color: rgba(45, 45, 45, 0.5) !important;
+}
+
+/* SECONDARY */
+.bg-secondary,
+.hover\:bg-secondary:hover {
+  background-color: #3d3d3d !important;
+  color: #ffffff !important;
+}
+
+/* SZAROŚCI TEKSTOWE - gradacja */
+.text-gray-900 {
+  color: #212121 !important;
+}
+
+.text-gray-800 {
+  color: #2d2d2d !important;
+}
+
+.text-gray-700 {
+  color: #4a4a4a !important;
+}
+
+.text-gray-600 {
+  color: #6b6b6b !important;
+}
+
+.text-gray-500 {
+  color: #8a8a8a !important;
+}
+
+.text-gray-400 {
+  color: #a8a8a8 !important;
+}
+
+.text-gray-300 {
+  color: #c4c4c4 !important;
+}
+
+/* BIAŁE */
+.text-white,
+div.text-white,
+.text-white.tracking-tight,
+.font-bold.text-white {
+  color: #ffffff !important;
+}
+
+/* Footer - text-white MUSI pozostać białe */
+footer .text-white,
+footer div.text-white,
+footer .text-white * {
+  color: #ffffff !important;
+}
+
+/* Blokuj group-hover:text-accent w footerze */
+footer .group-hover\:text-accent {
+  color: #ffffff !important;
+}
+
+footer .group:hover .group-hover\:text-accent {
+  color: #ffffff !important;
+}
+
+/* BORDERY - beżowe odcienie */
+.border-gray-100 {
+  border-color: #e8e5e0 !important;
+}
+
+.border-gray-200 {
+  border-color: #ddd9d3 !important;
+}
+
+.border-gray-300 {
+  border-color: #ccc9c4 !important;
+}
+
+.border-gray-800 {
+  border-color: #3d3d3d !important;
+}
+
+.border-gray-800\/50 {
+  border-color: rgba(61, 61, 61, 0.5) !important;
+}
+
+.border-t,
+.border-b,
+.border-l,
+.border-r,
+.border {
+  border-color: #e8e5e0 !important;
+}
+
+/* ====================================================================
+   🚫 USUWANIE WSZYSTKICH KOLORÓW
+   ==================================================================== */
+
+/* Usuń WSZYSTKIE niebieskie */
+.bg-blue-50, .bg-blue-100, .bg-blue-500, .bg-blue-600, .bg-blue-700,
+.text-blue-500, .text-blue-600, .text-blue-700,
+.border-blue-500, .border-blue-600,
+.hover\:bg-blue-500:hover, .hover\:bg-blue-600:hover, .hover\:bg-blue-700:hover {
+  background-color: #212121 !important;
+  color: #ffffff !important;
+  border-color: #212121 !important;
+}
+
+/* Zielone kolory usunięte - używamy accent (złoty) */
+
+/* Usuń WSZYSTKIE żółte */
+.bg-yellow-50, .bg-yellow-100, .bg-yellow-500, .bg-yellow-600,
+.text-yellow-500, .text-yellow-600,
+.text-warning,
+.bg-yellow-500\/90 {
+  background-color: #212121 !important;
+  color: #ffffff !important;
+  border-color: #212121 !important;
+}
+
+/* Usuń WSZYSTKIE czerwone (oprócz danger) */
+.bg-red-50, .bg-red-100, .bg-red-500, .bg-red-600,
+.text-red-500, .text-red-600 {
+  background-color: #212121 !important;
+  color: #ffffff !important;
+}
+
+/* WYJĄTEK: Danger/error - zostaje czerwony dla UX */
+.text-danger,
+span.text-danger {
+  color: #dc2626 !important;
+  background-color: transparent !important;
+}
+
+/* Usuń WSZYSTKIE indigo/purple */
+.bg-indigo-50, .bg-indigo-500, .bg-indigo-600,
+.text-indigo-500, .text-indigo-600 {
+  background-color: #212121 !important;
+  color: #ffffff !important;
+}
+
+/* Success badge - accent (złoty) */
+.bg-success {
+  background-color: #C5A572 !important;
+  color: #ffffff !important;
+}
+
+/* ====================================================================
+   🏗️ STRUKTURA STRONY
+   ==================================================================== */
+
+/* Header - białe tło SPÓJNE */
+header,
+header.sticky,
+header.bg-white,
+header.bg-white\/95 {
+  background-color: #f3f1ee !important;
+  border-bottom: 1px solid #212121 !important;
+  backdrop-filter: none !important;
+}
+
+/* Navbar container - BIAŁE tło */
+nav.container {
+  background-color: #f3f1ee !important;
+}
+
+/* Footer - czarne tło */
+footer {
+  background-color: #212121 !important;
+  color: #ffffff !important;
+  border-top: 1px solid #3d3d3d !important;
+}
+
+/* Sekcje - alternating backgrounds */
+section {
+  transition: background-color 0.3s ease !important;
+}
+
+.bg-white {
+  background-color: #f3f1ee !important;
+}
+
+.bg-gray-50 {
+  background-color: #f3f1ee !important;
+}
+
+/* Hero - czyste białe tło */
+.hero-custom-bg {
+  background: #f3f1ee !important;
+}
+
+.hero-custom-bg::before,
+.hero-custom-bg::after {
+  display: none !important;
+}
+
+/* ====================================================================
+   🃏 KARTY I ARTYKUŁY - Spójna stylistyka
+   ==================================================================== */
+
+article {
+  background-color: #f3f1ee !important;
+  border: 1px solid #e8e5e0 !important;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+article:hover {
+  border-color: #ccc9c4 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(33, 33, 33, 0.08) !important;
+}
+
+/* ====================================================================
+   💫 CIENIE - Delikatne, spójne
+   ==================================================================== */
+
+.shadow-sm {
+  box-shadow: 0 1px 3px rgba(33, 33, 33, 0.06), 0 1px 2px rgba(33, 33, 33, 0.04) !important;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(33, 33, 33, 0.08), 0 2px 4px -1px rgba(33, 33, 33, 0.04) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(33, 33, 33, 0.08), 0 4px 6px -2px rgba(33, 33, 33, 0.04) !important;
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(33, 33, 33, 0.08), 0 10px 10px -5px rgba(33, 33, 33, 0.03) !important;
+}
+
+.shadow-soft {
+  box-shadow: 0 2px 12px rgba(33, 33, 33, 0.06) !important;
+}
+
+.hover\:shadow-md:hover {
+  box-shadow: 0 6px 12px rgba(33, 33, 33, 0.1) !important;
+}
+
+.hover\:shadow-lg:hover {
+  box-shadow: 0 12px 24px rgba(33, 33, 33, 0.12) !important;
+}
+
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 32px rgba(33, 33, 33, 0.14) !important;
+}
+
+/* ====================================================================
+   🎯 SPECIFIC ELEMENT TYPOGRAPHY - KAŻDY SZCZEGÓŁ
+   ==================================================================== */
+
+/* Tytuły kart samochodów - Instrument Serif */
+.text-xl.font-bold,
+.text-2xl.font-bold,
+.text-3xl.font-bold,
+.text-4xl.font-bold,
+.text-5xl.font-bold,
+.text-6xl.font-bold,
+.text-7xl.font-bold {
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Ceny - Instrument Serif (prominent) */
+.text-2xl.font-bold.text-primary,
+.text-3xl.font-bold.text-primary,
+.text-4xl.font-bold.text-primary {
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  color: #212121 !important;
+}
+
+/* Małe teksty - Avenir Next Condensed */
+.text-xs,
+.text-sm,
+.text-base {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  text-transform: none !important;
+}
+
+/* Badge tekst - Avenir Next Condensed uppercase */
+.text-xs.font-bold,
+.text-xs.font-semibold,
+.text-sm.font-bold,
+.text-sm.font-semibold {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-weight: 600 !important;
+}
+
+/* ====================================================================
+   🎨 SPECIFIC COLORS - Badge, Icons, etc
+   ==================================================================== */
+
+/* Badge DOSTĘPNY/REZERWACJA/SPRZEDANY - używamy accent */
+span.bg-yellow-500\/90,
+span.bg-gray-500\/90,
+.px-3.py-1\.5.rounded-full {
+  background-color: #212121 !important;
+  color: #ffffff !important;
+}
+
+/* Social media icons - ciemny szary */
+footer a[aria-label="Facebook"],
+footer a[aria-label="OtoMoto"] {
+  background-color: #2d2d2d !important;
+}
+
+footer a[aria-label="Facebook"]:hover,
+footer a[aria-label="OtoMoto"]:hover {
+  background-color: #3d3d3d !important;
+  color: #ffffff !important;
+}
+
+/* Rating stars - czarne */
+svg.text-warning,
+.text-warning svg {
+  color: #212121 !important;
+  fill: #212121 !important;
+}
+
+/* Download button - czarny */
+.download-button {
+  background-color: #212121 !important;
+  color: #ffffff !important;
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+}
+
+.download-button:hover {
+  background-color: #2d2d2d !important;
+}
+
+/* ====================================================================
+   🔗 LINKI - Spójne zachowanie
+   ==================================================================== */
+
+a {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #212121 !important;
+}
+
+/* Linki w tekstach - underline */
+a.hover\:underline:hover,
+p a,
+li a {
+  text-decoration: underline !important;
+  text-decoration-color: #212121 !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 2px !important;
+}
+
+/* Footer links */
+footer a {
+  color: #b8b8b8 !important;
+}
+
+footer a:hover {
+  color: #ffffff !important;
+}
+
+/* ====================================================================
+   📱 NAVIGATION - Absolutna spójność
+   ==================================================================== */
+
+/* Desktop nav */
+nav a {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+
+/* Active state */
+nav a.bg-primary {
+  background-color: #212121 !important;
+  color: #ffffff !important;
+}
+
+/* Mobile nav */
+.lg\:hidden a {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+}
+
+/* ====================================================================
+   ✨ HOVER & TRANSITIONS - Smooth i spójne
+   ==================================================================== */
+
+.transition-all,
+.transition-colors,
+.transition-transform {
+  transition-duration: 300ms !important;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* Hover backgrounds */
+.hover\:bg-gray-50:hover {
+  background-color: #f9f8f6 !important;
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: #f5f3f0 !important;
+}
+
+/* ====================================================================
+   📐 BORDER RADIUS - Delikatne zaokrąglenia
+   ==================================================================== */
+
+.rounded-lg {
+  border-radius: 0.625rem !important;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem !important;
+}
+
+.rounded-2xl {
+  border-radius: 1rem !important;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem !important;
+}
+
+.rounded-full {
+  border-radius: 9999px !important;
+}
+
+/* ====================================================================
+   🎪 SPECIAL ELEMENTS
+   ==================================================================== */
+
+/* NO gradients - tylko czarny tekst */
+.text-gradient-premium,
+span.text-gradient-premium {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+  color: #212121 !important;
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Certifications badge */
+.bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Cookie banner */
+#cookieBanner {
+  background-color: #f3f1ee !important;
+  border-top: 2px solid #e8e5e0 !important;
+}
+
+/* ====================================================================
+   📊 SPECIFIC COMPONENT OVERRIDES
+   ==================================================================== */
+
+/* Price boxes - highlight */
+.bg-gray-50.rounded-xl,
+.bg-gray-50.rounded-lg,
+.p-5.bg-gray-50 {
+  background-color: #f9f8f6 !important;
+  border-color: #e8e5e0 !important;
+}
+
+/* Stats/Numbers display */
+.text-5xl,
+.text-6xl,
+.text-7xl {
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Descriptions & subtitles */
+.text-lg,
+.text-xl,
+.text-2xl {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+}
+
+p.text-lg,
+p.text-xl,
+p.text-2xl {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  color: #6b6b6b !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+}
+
+/* ====================================================================
+   🎯 FOOTER TYPOGRAPHY - Spójność
+   ==================================================================== */
+
+footer {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+}
+
+/* Footer h1-h6 - Avenir semibold BIAŁE (OVERRIDE dla footera!) */
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6 {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  color: #ffffff !important;
+}
+
+/* Footer - DOMYŚLNIE wszystko białe */
+footer {
+  color: #ffffff !important;
+}
+
+footer * {
+  color: #ffffff !important;
+}
+
+/* Logo w footerze - SUPER PRIORYTET */
+footer a[href="/"] div,
+footer a[href="/"] div *,
+footer a[href="/"] .text-3xl,
+footer .text-3xl.font-bold.text-white.tracking-tight,
+footer .text-3xl.tracking-tight {
+  color: #ffffff !important;
+}
+
+footer .text-gray-400,
+footer .text-gray-500,
+footer .text-gray-700 {
+  color: #b8b8b8 !important;
+}
+
+footer p,
+footer span,
+footer li {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+}
+
+footer .text-gray-400 {
+  color: #b8b8b8 !important;
+}
+
+footer .text-gray-500 {
+  color: #a8a8a8 !important;
+}
+
+footer .text-gray-700 {
+  color: #8a8a8a !important;
+}
+
+footer .text-white {
+  color: #ffffff !important;
+}
+
+/* ====================================================================
+   🎨 VISUAL CONSISTENCY - Final polish
+   ==================================================================== */
+
+/* Ensure all SVG icons inherit color */
+svg {
+  color: inherit !important;
+}
+
+/* Remove any inline styles that might interfere - handled by !important rules */
+
+/* Backdrop blur consistency */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px) !important;
+}
+
+.bg-white\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Focus states - czarny ring */
+.focus\:ring-2:focus,
+.focus\:ring-accent:focus,
+.focus\:ring-primary:focus {
+  --tw-ring-color: #212121 !important;
+  --tw-ring-opacity: 0.3 !important;
+}
+
+/* Group hover effects */
+.group:hover .group-hover\:text-primary {
+  color: #212121 !important;
+}
+
+.group:hover .group-hover\:bg-accent {
+  background-color: #2d2d2d !important;
+}
+
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05) !important;
+}
+
+.group:hover .group-hover\:translate-x-1 {
+  transform: translateX(0.25rem) !important;
+}
+
+/* ====================================================================
+   🏁 ABSOLUTNA SPÓJNOŚĆ - ZERO WYJĄTKÓW
+   ==================================================================== */
+
+/* Force typography na WSZYSTKIE bold elementy */
+.font-bold {
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* WYJĄTEK: małe bold elementy (badge, buttons) - Avenir Next Condensed */
+.text-xs.font-bold,
+.text-sm.font-bold,
+button.font-bold,
+.inline-flex.font-bold {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Semibold - Avenir Next Condensed */
+.font-semibold {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+}
+
+/* Medium weight - Avenir Next Condensed */
+.font-medium {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+}
+
+/* ====================================================================
+   🎭 RESPONSIVE - Wszystkie ekrany spójne
+   ==================================================================== */
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px !important;
+  }
+  
+  article {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* ====================================================================
+   ✅ FINAL QUALITY CHECKS
+   ==================================================================== */
+
+/* Wszystkie kolory zarządzane przez klasy - nie inline styles */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* Perfect readability */
+body {
+  text-rendering: optimizeLegibility !important;
+}
+
+/* ====================================================================
+   🔍 EDGE CASES - Każdy możliwy element
+   ==================================================================== */
+
+/* Breadcrumbs, tags, labels - Avenir Next Condensed */
+.breadcrumb,
+.tag,
+.badge,
+.chip {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+}
+
+/* Tabele - Avenir Next Condensed */
+table,
+th,
+td {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  border-color: #e8e5e0 !important;
+}
+
+/* Lists - Avenir Next Condensed */
+ul, ol, li {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  color: #6b6b6b !important;
+}
+
+/* Blockquotes - Avenir Next Condensed italic */
+blockquote {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  color: #6b6b6b !important;
+  border-left-color: #212121 !important;
+}
+
+/* Code blocks - monospace ale z naszą paletą */
+code, pre {
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace !important;
+  background-color: #f9f8f6 !important;
+  color: #212121 !important;
+  border-color: #e8e5e0 !important;
+}
+
+/* Strong/Bold w tekście - nie zmienia fontu */
+strong, b {
+  font-weight: 600 !important;
+  color: #212121 !important;
+}
+
+/* Em/Italic w tekście - Avenir italic (nie uppercase) */
+em, i {
+  font-style: normal !important;
+}
+
+/* Small text - Avenir Next Condensed */
+small,
+.text-xs,
+.text-sm {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+}
+
+/* ====================================================================
+   🎯 NAWIGACJA - Każdy szczegół
+   ==================================================================== */
+
+/* Desktop menu items - WIĘKSZE */
+header nav a,
+header nav button {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  font-size: 1rem !important;
+  padding: 0.75rem 1.5rem !important;
+}
+
+/* Mobile menu items - WIĘKSZE */
+.lg\:hidden nav a,
+.lg\:hidden .flex-col a {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 1.1rem !important;
+}
+
+/* Phone number in nav */
+header a[href^="tel"] {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+}
+
+/* ====================================================================
+   💳 KARTY SAMOCHODÓW - Perfekcyjna spójność
+   ==================================================================== */
+
+/* Tytuł samochodu - Instrument Serif */
+article h3,
+article .text-xl.font-bold {
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: #212121 !important;
+}
+
+/* Podtytuł/trim - Avenir Next Condensed */
+article .text-sm.text-gray-500,
+article p.text-sm {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  text-transform: none !important;
+  color: #8a8a8a !important;
+}
+
+/* Specyfikacja (rok, przebieg, etc) - Avenir Next Condensed */
+article .text-xs.text-gray-500 {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  color: #8a8a8a !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-size: 0.7rem !important;
+}
+
+article .font-bold.text-gray-900 {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  color: #212121 !important;
+  text-transform: none !important;
+}
+
+/* Cena - Instrument Serif */
+article .text-2xl.font-bold.text-primary {
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Rata - Avenir Next Condensed */
+article .text-xs.text-gray-500 span {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+}
+
+/* ====================================================================
+   📋 FORMULARZE - Perfekcyjna spójność
+   ==================================================================== */
+
+/* Wszystkie inputy */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  color: #2d2d2d !important;
+  background-color: #f3f1ee !important;
+  border: 1px solid #ddd9d3 !important;
+}
+
+/* Placeholders */
+::placeholder {
+  color: #a8a8a8 !important;
+  font-style: normal !important;
+  opacity: 1 !important;
+}
+
+/* ====================================================================
+   🎪 ANIMACJE - Subtle i spójne
+   ==================================================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* ====================================================================
+   🏆 FINAL BOSS - Absolutna kontrola
+   ==================================================================== */
+
+/* Remove ANY potential blue or colored text */
+[class*="blue"],
+[class*="indigo"],
+[class*="purple"],
+[class*="yellow"]:not(.text-danger),
+[class*="orange"]:not(.text-danger) {
+  color: #212121 !important;
+}
+
+/* Ensure consistency in white text on dark */
+.bg-primary *,
+.bg-secondary *,
+footer * {
+  color: inherit !important;
+}
+
+footer .text-white,
+footer h1, footer h2, footer h3, footer h4 {
+  color: #ffffff !important;
+}
+
+/* Ensure all borders are from our palette */
+* {
+  border-color: inherit !important;
+}
+
+.border,
+.border-t,
+.border-b,
+.border-l,
+.border-r {
+  border-color: #e8e5e0 !important;
+}
+
+/* Absolutely no blue border */
+.border-blue-500,
+.focus\:border-blue-500:focus {
+  border-color: #212121 !important;
+}
+
+/* ====================================================================
+   📱 MOBILE SPECIFIC - Spójność na małych ekranach
+   ==================================================================== */
+
+@media (max-width: 768px) {
+  /* Logo size */
+  header .text-2xl {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Navigation */
+  nav a {
+    font-size: 1rem !important;
+  }
+  
+  /* Buttons */
+  button,
+  .inline-flex {
+    font-size: 0.95rem !important;
+    padding: 0.75rem 1.5rem !important;
+  }
+}
+
+/* ====================================================================
+   ✨ PERFECTION - Zero tolerancji dla niespójności
+   ==================================================================== */
+
+/* KAŻDY font-bold JEST Instrument Serif (oprócz małych, przycisków i FOOTERA!) */
+.font-bold:not(.text-xs):not(.text-sm):not(button):not(.inline-flex):not(nav *):not(footer *):not(footer .font-semibold) {
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  font-weight: 400 !important;
+  color: #212121 !important;
+}
+
+/* Font-bold w FOOTERZE = BIAŁE */
+footer .font-bold {
+  color: #ffffff !important;
+}
+
+/* Font-bold w nagłówkach - wymuszamy Instrument Serif */
+h1.font-bold, h1 .font-bold,
+h2.font-bold, h2 .font-bold,
+h3.font-bold, h3 .font-bold,
+h4.font-bold, h4 .font-bold {
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  font-weight: 400 !important;
+}
+
+/* Każdy paragraf MUSI być Avenir Next Condensed */
+p, p * {
+  font-family: "Avenir Next Condensed", "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+}
+
+/* Każdy h1-h6 MUSI być Instrument Serif */
+h1, h1 *,
+h2, h2 *,
+h3, h3 *,
+h4, h4 *,
+h5, h5 *,
+h6, h6 * {
+  font-family: "Instrument Serif", serif !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Wyjątek dla span.text-danger wewnątrz nagłówków */
+h1 .text-danger,
+h2 .text-danger,
+h3 .text-danger {
+  color: #dc2626 !important;
+}
+
+/* ====================================================================
+   🎯 PRINT STYLES - PDF broszura też spójna
+   ==================================================================== */
+
+@media print {
+  body {
+    background-color: #f3f1ee !important;
+    color: #212121 !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Instrument Serif", serif !important;
+    font-style: normal !important;
+    text-transform: uppercase !important;
+    page-break-after: avoid !important;
+  }
+  
+  .download-button-container {
+    display: none !important;
+  }
+}
+
+

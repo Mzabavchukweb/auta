@@ -1,0 +1,443 @@
+/* 🎨 CUSTOM PREMIUM ENHANCEMENTS - PiękneAuta.pl
+   Unikalne elementy wizualne, żeby odróżnić się od AI template */
+
+:root {
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --gold-accent: #C5A572;
+}
+
+/* ================================
+   🌟 HERO SECTION - CUSTOM TREATMENT
+   ================================ */
+
+/* Premium gradient overlay na hero */
+.hero-custom-bg {
+  position: relative;
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 50%, #f3f4f6 100%);
+}
+
+.hero-custom-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(184, 134, 11, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(11, 18, 32, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Animated geometric shapes w tle */
+.hero-custom-bg::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(45deg, rgba(184, 134, 11, 0.04), transparent);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: morphShape 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes morphShape {
+  0%, 100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% {
+    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+    transform: rotate(180deg) scale(0.9);
+  }
+  75% {
+    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+    transform: rotate(270deg) scale(1.05);
+  }
+}
+
+/* ================================
+   🚗 KARTY SAMOCHODÓW - SUBTELNY EFEKT
+   ================================ */
+
+/* Subtelny hover bez dziwnych efektów */
+.car-card-premium {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.car-card-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px -4px rgba(11, 18, 32, 0.12);
+}
+
+/* Delikatne powiększenie zdjęcia */
+.car-card-premium img {
+  transition: transform 0.4s ease;
+}
+
+.car-card-premium:hover img {
+  transform: scale(1.02);
+}
+
+/* Badge status z custom glow */
+.status-badge-glow {
+  position: relative;
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(22, 163, 74, 0);
+  }
+}
+
+/* ================================
+   💎 SEKCJA WYRÓŻNIKÓW - CREATIVE LAYOUT
+   ================================ */
+
+/* Custom gradient dla ikon wyróżników */
+.feature-icon-wrapper {
+  position: relative;
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  transition: all 0.4s var(--ease-premium);
+}
+
+.feature-icon-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(38, 99, 242, 0.1), rgba(197, 165, 114, 0.05));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-premium);
+}
+
+.feature-icon-wrapper:hover::before {
+  opacity: 1;
+}
+
+.feature-icon-wrapper:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 24px -8px rgba(38, 99, 242, 0.2);
+}
+
+/* ================================
+   ✨ TRUST BADGES - FLOATING CARDS
+   ================================ */
+
+.trust-badge-float {
+  animation: floatBadge 6s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-12px) rotate(0.5deg);
+  }
+}
+
+/* ================================
+   📱 STICKY CTA - PREMIUM PULSE
+   ================================ */
+
+.cta-pulse-ring {
+  position: absolute;
+  inset: -8px;
+  border: 2px solid rgba(38, 99, 242, 0.3);
+  border-radius: 50%;
+  animation: pulseRing 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* ================================
+   🎯 CUSTOM SECTION DIVIDERS
+   ================================ */
+
+.section-divider-wave {
+  position: relative;
+  height: 80px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.section-divider-wave::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23f9fafb'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23f9fafb'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: cover;
+  animation: waveMove 20s linear infinite;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}
+
+/* Scrollbar styling removed */
+
+/* ================================
+   ⚡ LOADING ANIMATION
+   ================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton-loader {
+  background: linear-gradient(
+    90deg,
+    #f3f4f6 0%,
+    #e5e7eb 50%,
+    #f3f4f6 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ================================
+   🎯 TEXT GRADIENT EFFECTS
+   ================================ */
+
+.text-gradient-premium {
+  background: linear-gradient(135deg, #0B1220 0%, #2663F2 50%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ================================
+   🏆 GOLD ACCENT - PREMIUM TOUCH
+   ================================ */
+
+.gold-accent-line {
+  position: relative;
+  display: inline-block;
+}
+
+.gold-accent-line::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-accent), transparent);
+  border-radius: 2px;
+}
+
+/* ================================
+   📸 IMAGE LAZY LOAD EFFECT
+   ================================ */
+
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-premium);
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* ================================
+   🎪 CUSTOM CURSOR EFFECT (subtle)
+   ================================ */
+
+@media (hover: hover) {
+  .cursor-custom {
+    cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='10' fill='%232663F2' opacity='0.3'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%230B1220'/%3E%3C/svg%3E") 12 12, auto;
+  }
+}
+
+/* ================================
+   ✨ GLASSMORPHISM EFFECTS
+   ================================ */
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-effect-dark {
+  background: rgba(11, 18, 32, 0.8);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ================================
+   🎭 REVEAL ANIMATIONS
+   ================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s var(--ease-premium) forwards;
+}
+
+.fade-in-up-delay-1 {
+  animation: fadeInUp 0.8s var(--ease-premium) 0.1s forwards;
+  opacity: 0;
+}
+
+.fade-in-up-delay-2 {
+  animation: fadeInUp 0.8s var(--ease-premium) 0.2s forwards;
+  opacity: 0;
+}
+
+.fade-in-up-delay-3 {
+  animation: fadeInUp 0.8s var(--ease-premium) 0.3s forwards;
+  opacity: 0;
+}
+
+/* ================================
+   🎨 BRAND COLORS - ENHANCED
+   ================================ */
+
+.bg-primary-gradient {
+  background: linear-gradient(135deg, #0B1220 0%, #1F2937 100%);
+}
+
+.bg-accent-gradient {
+  background: linear-gradient(135deg, #2663F2 0%, #1d4ed8 100%);
+}
+
+.border-gold {
+  border-color: var(--gold-accent);
+}
+
+.text-gold {
+  color: var(--gold-accent);
+}
+
+/* ================================
+   🌟 SPECIAL EFFECTS - STARS
+   ================================ */
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.star-effect {
+  position: relative;
+}
+
+.star-effect::before {
+  content: '✦';
+  position: absolute;
+  color: var(--gold-accent);
+  opacity: 0.3;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* ================================
+   📱 MOBILE OPTIMIZATIONS
+   ================================ */
+
+@media (max-width: 768px) {
+  .hero-custom-bg::after {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .car-card-premium:active {
+    transform: translateY(-1px);
+  }
+  
+  .section-divider-wave {
+    height: 40px;
+  }
+}
+
+/* ================================
+   ⚡ PERFORMANCE OPTIMIZATIONS
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* GPU acceleration dla smooth animations */
+.feature-icon-wrapper,
+.trust-badge-float {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+

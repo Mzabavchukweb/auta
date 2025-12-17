@@ -1,0 +1,172 @@
+Kolorystyka (premium, spokojna, automotive)
+
+Tryb jasny (domyślny)
+
+Primary (ink): #0B1220 – prawie czarny, do nagłówków i CTA
+
+Accent (electric blue): #2663F2 – oszczędnie: linki, fokusy, akcent w CTA
+
+Neutral 900–50: #0F172A, #1F2937, #374151, #6B7280, #9CA3AF, #D1D5DB, #E5E7EB, #F3F4F6, #F9FAFB
+
+Success: #16A34A (etykiety jakości)
+
+Warning: #F59E0B (uwagi)
+
+Danger: #DC2626 (błędy)
+
+Gold (premium akcent, bardzo oszczędnie): #C5A572 (detal, nie tło)
+
+Tryb ciemny (opcjonalny, super-premium)
+
+BG: #0B0E14
+
+Text primary: #EEF2FF
+
+Card: #111827
+
+Accent: #3B82F6
+
+Dividers: #1F2937
+
+Zasada użycia: 80% neutral, 15% czerń/ink, 5% akcent. Zero czerwonych przycisków na stronie sprzedaży (czerwony tylko dla błędów).
+
+Typografia
+
+Font: Inter lub Manrope (czytelne, nowoczesne).
+
+Rozmiary: H1 44–52, H2 28–32, H3 22–24, body 17–18, lead 20.
+
+Kerning/line-height: H1 lh 1.1, body lh 1.6.
+
+Waga: H1 700, śródtytuły 600, body 400–500. Zero uppercase krzyczącego.
+
+Siatka i przestrzeń
+
+Container: max 1280 px (desktop), padding 24–32 px.
+
+Rytm: 8 px grid.
+
+White space: nie bój się pustki – to „luksus”.
+
+Karty i komponenty
+
+Card (auto): tło #FFFFFF, promień 16–20 px, obrys 1px #E5E7EB, cień: subtelny (0 8px 24px rgba(2,8,23,0.06)).
+
+Zdjęcie auta: ratio 4:3, bez przepałów, neutralny balans bieli.
+
+Badge statusu:
+
+Dostępny – #16A34A na #ECFDF5
+
+Rezerwacja – #F59E0B na #FFFBEB
+
+Sprzedany – #6B7280 na #F3F4F6
+
+Button primary: tło #0B1220, tekst biały, hover: #111827, aktywny: #0B1220 z wewn. cieniem; focus ring #2663F2 (2px).
+
+Button secondary (ghost): tekst #0B1220, obrys #E5E7EB, hover: #F3F4F6.
+
+Motion (drogie wrażenie = płynnie i dyskretnie)
+
+Wejścia komponentów: fade+tiny move (Y=8 px), 200–250 ms, ease-out.
+
+Hover kart: skala 1.01 + cień ↑, 150 ms.
+
+Easing: cubic-bezier(0.22, 1, 0.36, 1) (standard „ease out” premium).
+
+Zero parallax/karuzel – spokój, kontrola, pewność.
+
+Fotografia i wideo
+
+Tło neutralne, mat, bez jaskrawej zieleni/niebieskich LED-ów.
+
+3 ujęcia obowiązkowe na kartę: front 3/4, tył 3/4, wnętrze (konsola).
+
+Hero wideo (30–45 s): Artur + proces (miernik lakieru, podnośnik, komputer diagnostyczny). Bez muzyki stockowej „tech corporate” – krótkie, naturalne dźwięki.
+
+UX „żeby od razu czuć poziom”
+
+Hero bez śmieci: 1 claim + 2 CTA. Zero sliderów.
+
+Filtry aut sticky (mobile: wysuwany panel). Szybki wynik, jasny komunikat „X aut”.
+
+Rata „od” zawsze widoczna na karcie (ale podpis „orientacyjna”).
+
+Raport weryfikacji – widoczny na stronie szczegółów (ikona + PDF).
+
+CTA sticky (tel/SMS/WhatsApp/Leasing) na mobile – nie trzeba szukać.
+
+Opinie na Home – 3–6 szt., ze zdjęciem/źródłem (wiarygodność).
+
+Fokus na dostępności: kontrast min. 4.5:1, focus ring wyraźny, labelowane pola.
+
+Czas do pierwszej treści: < 2 s na LTE (WebP, lazy-load, prefetch czcionek).
+
+Mikrocopy (krótkie, pewne siebie)
+
+H1: „Auta sprawdzone do ostatniej śrubki.”
+
+Lead: „28 lat doświadczenia. Zakup pewny jak z salonu.”
+
+CTA: „Zobacz auta” / „Weź w leasing” / „Poproś o wycenę”
+
+Dowody: „Raport 200+ punktów”, „Historia serwisowa”, „0 kompromisów”.
+
+Leasing: „Rata orientacyjna. To nie oferta.”
+
+Formularz – sukces: „Dziękujemy. Oddzwonimy dziś.”
+
+Anty-wzorce (które zabijają „premium”)
+
+Krzykliwe gradienty, czerwone CTA, zaokrąglenia 32–40 px „cukierkowe”.
+
+Cienie „jak po upadku meteorytu” (zbyt duże, rozmyte).
+
+Za dużo fontów/rozmiarów, uppercase z trackingiem 0.3em.
+
+Stockowe zdjęcia z „uśmiechem numer 5”.
+
+Agresywne pop-upy, karuzele, auto-play z audio.
+
+Toksy „starter” dla deva (wrzuć do tokens.css)
+:root{
+  --ink:#0B1220; --bg:#FFFFFF; --muted:#6B7280;
+  --accent:#2663F2; --success:#16A34A; --warn:#F59E0B; --danger:#DC2626;
+  --n900:#0F172A; --n700:#374151; --n500:#6B7280; --n300:#D1D5DB; --n100:#F3F4F6;
+  --radius:16px; --shadow:0 8px 24px rgba(2,8,23,.06);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+.btn-primary{background:var(--ink);color:#fff;border-radius:12px;padding:12px 18px;transition:.18s var(--ease);}
+.btn-primary:hover{filter:brightness(1.05);}
+.btn-primary:focus{outline:2px solid var(--accent);outline-offset:3px;}
+.card{background:#fff;border:1px solid var(--n300);border-radius:var(--radius);box-shadow:var(--shadow);}
+.badge{font-weight:600;border-radius:999px;padding:4px 10px;}
+.badge--ok{color:var(--success);background:#ECFDF5;border:1px solid #A7F3D0;}
+.badge--hold{color:var(--warn);background:#FFFBEB;border:1px solid #FDE68A;}
+.badge--sold{color:var(--n500);background:var(--n100);border:1px solid var(--n300);}
+
+Mapping użycia kolorów (żeby nie popłynąć)
+
+Nagłówki, główne teksty: #0B1220
+
+Tekst pomocniczy: #6B7280
+
+Linki/akcenty/focus: #2663F2
+
+Tła sekcji: białe; ciemne tło tylko w hero „statement” albo stopce
+
+Obramowania: #E5E7EB
+
+CTA: czarny/ink, a nie niebieski – niech akcent zostanie do linków
+
+Szybki „wow” plan na Home (pierwsze 5 sekund)
+
+Mocny claim + twarz Artura/wideo procesu (wiarygodność).
+
+3 wyróżniki w jednej linii (ikona + 1 zdanie).
+
+Sekcja „Nowe w katalogu” – karty, rata od, zdjęcia bez chaosu.
+
+Dowód społeczny – 3 opinie z realnym źródłem/logo.
+
+CTA sticky na mobile – od razu wiadomo, co zrobić.

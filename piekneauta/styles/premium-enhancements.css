@@ -1,0 +1,118 @@
+/* Premium Enhancements - Custom Easing & Refinements */
+
+:root {
+  /* Premium easing (zgodnie z wytycznymi) */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Zastosuj premium easing do wszystkich transicji */
+.transition-all,
+.transition-transform,
+.transition-colors,
+.transition-opacity {
+  transition-timing-function: var(--ease-premium) !important;
+}
+
+/* Subtelniejsze cienie dla kart (zgodnie z wytycznymi) */
+.shadow-soft {
+  box-shadow: 0 2px 15px -3px rgba(2, 8, 23, 0.06), 0 10px 20px -2px rgba(2, 8, 23, 0.04) !important;
+}
+
+/* Hover kart - dokładnie jak w wytycznych */
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.01) !important;
+}
+
+/* Premium Typography: Plus Jakarta Sans (headings) + Inter (body) */
+
+/* Nagłówki - Plus Jakarta Sans 700/800 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  font-weight: 800; /* Ekstra bold dla głównych nagłówków */
+}
+
+/* Body text - Inter 400/500 */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Semibold dla akcentów */
+strong, b, .font-semibold {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Premium focus states */
+*:focus-visible {
+  outline: 2px solid #2663F2;
+  outline-offset: 3px;
+  transition: outline-offset 0.15s var(--ease-premium);
+}
+
+/* Subtelny hover dla linków */
+a:not(.inline-flex):not(.flex) {
+  transition: color 0.2s var(--ease-premium);
+}
+
+/* Container - dokładnie 1280px jak w wytycznych */
+.container {
+  max-width: 1280px !important;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+/* Spacing w kartach produktów - bardziej premium */
+.lg\:col-span-2 .space-y-8 > * + * {
+  margin-top: 2.5rem;
+}
+
+/* Logo - wymuszenie widoczności */
+header a[href="/"] svg {
+  color: #0B1220 !important;
+  fill: currentColor !important;
+}
+
+header a[href="/"] svg path {
+  fill: currentColor !important;
+}
+
+/* Logo marek - subtelne, szare */
+img[src*="/images/brands/"] {
+  filter: grayscale(100%) opacity(0.6);
+  transition: all 0.3s var(--ease-premium);
+}
+
+.group:hover img[src*="/images/brands/"] {
+  filter: grayscale(0%) opacity(1);
+}
+
+/* Badge cenowy hero - premium shadow */
+.absolute.rounded-full.shadow-2xl {
+  box-shadow: 0 20px 60px -15px rgba(11, 18, 32, 0.3) !important;
+}
+
+/* Divider pod H1/H2 - subtelniejszy */
+.w-24.h-1\.5.bg-primary {
+  opacity: 0.9;
+}
+
+/* Cache busted: 1762215252 */

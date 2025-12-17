@@ -1,0 +1,1141 @@
+<!DOCTYPE html><html lang="pl" data-astro-cid-37fxchfa> <head>
+<script>
+// Initialize language on page load
+(function() {
+  const savedLang = localStorage.getItem('language') || 'pl';
+  document.documentElement.lang = savedLang;
+})();
+
+function galleryState() {
+  return {
+    currentImage: 0,
+    images: [],
+    lightboxOpen: false,
+    init() {
+      this.images = Array.from(document.querySelectorAll('.car-image')).map(img => img.src);
+      this.$watch('currentImage', () => {
+        this.$nextTick(() => this.scrollThumbnails());
+      });
+      this.$nextTick(() => this.scrollThumbnails());
+    },
+    showPrev() {
+      const maxIndex = this.images.length;
+      this.currentImage = this.currentImage > 0 ? this.currentImage - 1 : maxIndex;
+    },
+    showNext() {
+      const maxIndex = this.images.length;
+      this.currentImage = this.currentImage < maxIndex ? this.currentImage + 1 : 0;
+    },
+    openLightbox(index = this.currentImage) {
+      this.currentImage = index;
+      this.lightboxOpen = true;
+      document.body.classList.add('overflow-hidden', 'lightbox-open');
+      this.$nextTick(() => this.scrollThumbnails());
+    },
+    closeLightbox() {
+      this.lightboxOpen = false;
+      document.body.classList.remove('overflow-hidden', 'lightbox-open');
+    },
+    handleKeydown(event) {
+      if (!this.lightboxOpen) return;
+      if (event.key === 'Escape') {
+        this.closeLightbox();
+      } else if (event.key === 'ArrowRight') {
+        this.showNext();
+      } else if (event.key === 'ArrowLeft') {
+        this.showPrev();
+      }
+    },
+    scrollThumbnails() {
+      const containers = [this.$refs.thumbStrip, this.$refs.thumbStripLightbox].filter(Boolean);
+      containers.forEach(container => {
+        const active = container.querySelector(`[data-index="${this.currentImage}"]`);
+        if (!active) return;
+        const offsetLeft = active.offsetLeft;
+        const offsetRight = offsetLeft + active.offsetWidth;
+        const visibleStart = container.scrollLeft;
+        const visibleEnd = visibleStart + container.clientWidth;
+        if (offsetLeft < visibleStart) {
+          container.scrollTo({ left: offsetLeft - 16, behavior: 'smooth' });
+        } else if (offsetRight > visibleEnd) {
+          container.scrollTo({ left: offsetRight - container.clientWidth + 16, behavior: 'smooth' });
+        }
+      });
+    }
+  };
+}
+</script><!-- Google Analytics - loaded conditionally based on cookie consent --><!-- See CookieBanner component for implementation --><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/images/logo.svg"><meta name="generator" content="Astro v5.15.3"><!-- Primary Meta Tags --><title>Audi Q7 2019 - Piekne auta</title><meta name="title" content="Audi Q7 2019 - Piekne auta"><meta name="description" content="Audi Q7 50 TDI mHEV Quattro Black Edition Tiptr 2019, 188,000 km, Hybryda, Automat. Cena: 144,900 zł."><link rel="canonical" href="https://piekneauta.pl/samochody/audi-q7-2019-50tdi-quattro/"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://piekneauta.pl/samochody/audi-q7-2019-50tdi-quattro/"><meta property="og:title" content="Audi Q7 2019 - Piekne auta"><meta property="og:description" content="Audi Q7 50 TDI mHEV Quattro Black Edition Tiptr 2019, 188,000 km, Hybryda, Automat. Cena: 144,900 zł."><meta property="og:image" content="/images/og-default.svg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://piekneauta.pl/samochody/audi-q7-2019-50tdi-quattro/"><meta property="twitter:title" content="Audi Q7 50 TDI 2019 - Piekne auta"><meta property="twitter:description" content="Audi Q7 50 TDI mHEV Quattro Black Edition Tiptr 2019, 188,000 km, Hybryda, Automat. Cena: 144,900 zł."><meta property="twitter:image" content="/images/og-default.svg"><!-- Preconnect to optimize font loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Fonts loaded in nacja-rebrand.css -->
+ <!-- Schema.org Organization --><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoDealer",
+    "name": "Piekne auta - Artur Kurzydłowski",
+    "url": "https://piekneauta.pl",
+    "logo": "https://piekneauta.pl/images/logo.svg?v=1763334170",
+    "telephone": "+48502428282",
+    "email": "twojleasing@me.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "PL"
+    },
+    "taxID": "6731525915",
+    "founder": {
+      "@type": "Person",
+      "name": "Artur Kurzydłowski"
+    },
+    "sameAs": [
+      "https://www.facebook.com/Apmleasing",
+      "https://piekneauta.otomoto.pl",
+      "https://lozaprzedsiebiorcow.pl"
+    ]
+  }
+  </script><!-- Alpine.js --><script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script><!-- Alpine.js x-cloak style --><style>[x-cloak] { display: none !important; }</style><link rel="stylesheet" href="/styles/auta.CnOC-q7W.css">
+<link rel="stylesheet" href="/styles/premium-enhancements.css">
+<link rel="stylesheet" href="/styles/nacja-rebrand.css">
+<style>
+/* Logo - zdecydowanie większe na mobile, dominujące */
+@media (max-width: 1023px) {
+  header img[alt="Piekne auta"] { height: 12rem !important; }
+  footer img[alt="Piekne auta"] { height: 10rem !important; }
+}
+@media (max-width: 768px) {
+  header img[alt="Piekne auta"] { height: 11rem !important; }
+  footer img[alt="Piekne auta"] { height: 9rem !important; }
+}
+@media (max-width: 640px) {
+  header img[alt="Piekne auta"] { height: 10rem !important; }
+  footer img[alt="Piekne auta"] { height: 8rem !important; }
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.details-icon-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.65rem;
+  line-height: 1.65;
+}
+
+.details-icon-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 0.35rem;
+  height: 0.7rem;
+  border-right: 2px solid #111827;
+  border-bottom: 2px solid #111827;
+  transform: rotate(45deg);
+}
+
+.thumb-strip {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 0.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+.thumb-strip::-webkit-scrollbar {
+  height: 6px;
+}
+
+.thumb-strip::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thumb-strip::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 9999px;
+}
+
+.thumb-strip button {
+  flex: 0 0 7rem;
+  min-width: 7rem;
+  height: 5.5rem;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.thumb-strip button img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.1);
+  transform-origin: center;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.gallery-nav:hover {
+  color: #be123c;
+  border-color: #be123c;
+}
+
+.gallery-nav svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: block;
+  flex-shrink: 0;
+}
+
+.gallery-nav-left {
+  left: 0.75rem;
+}
+
+.gallery-nav-right {
+  right: 0.75rem;
+}
+
+/* Larger gallery nav buttons on mobile */
+@media (max-width: 1023px) {
+  .gallery-nav {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .gallery-nav svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .gallery-nav-left {
+    left: 0.5rem;
+  }
+  
+  .gallery-nav-right {
+    right: 0.5rem;
+  }
+}
+
+.gallery-counter {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 9999px;
+  background-color: rgba(17, 24, 39, 0.92);
+  color: #f9fafb;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
+
+.gallery-counter svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+body.lightbox-open header,
+body.lightbox-open .sticky-lightbox-hide {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+@media (min-width: 1024px) {
+  .thumb-strip button {
+    flex-basis: 8rem;
+    min-width: 8rem;
+    height: 6.5rem;
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .thumb-strip button {
+    flex-basis: 6rem;
+    min-width: 6rem;
+    height: 5rem;
+    padding: 0;
+  }
+}
+
+.youtube-thumb {
+  position: relative;
+}
+
+.youtube-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.youtube-thumb-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: inherit;
+}
+
+.youtube-play-button {
+  width: clamp(3rem, 12vw, 4.75rem);
+  height: auto;
+  filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.35));
+  position: relative;
+}
+
+.youtube-play-button path[data-part="bg"] {
+  fill: #ff0000;
+}
+
+.youtube-play-button path[data-part="triangle"] {
+  fill: #ffffff;
+}
+
+.thumb-strip .youtube-play-button {
+  width: clamp(1.45rem, 5vw, 2.5rem);
+}
+
+/* Responsive styles for entire page - mobile only */
+@media (max-width: 1023px) {
+  /* Main container adjustments */
+  main .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Grid layout - single column on mobile */
+  main .container > .grid {
+    display: flex !important;
+    flex-direction: column;
+    gap: 1.5rem !important;
+  }
+  
+  /* Left column - extract gallery separately on mobile */
+  main .container > .grid > div:first-child {
+    width: 100% !important;
+    display: contents !important;
+  }
+  
+  /* Gallery - first on mobile (extracted from left column) */
+  main .container > .grid > div:first-child > div:first-child {
+    order: 1;
+    width: 100% !important;
+  }
+  
+  /* Sidebar - second on mobile (right after gallery) */
+  main .container > .grid > div:last-child {
+    width: 100% !important;
+    order: 2;
+    margin-top: 0 !important;
+  }
+  
+  /* Sticky sidebar - not sticky on mobile */
+  main .container > .grid > div:last-child .sticky {
+    position: static !important;
+    top: auto !important;
+  }
+  
+  /* Rest of sections in left column - after sidebar on mobile */
+  main .container > .grid > div:first-child > section,
+  main .container > .grid > div:first-child > div:not(:first-child) {
+    order: 3;
+    width: 100% !important;
+  }
+  
+  /* Sections padding on mobile */
+  section {
+    padding: 1.5rem !important;
+  }
+  
+  /* Space between sections */
+  main .container > .grid > div:first-child > div.space-y-12 {
+    gap: 1.5rem !important;
+  }
+  
+  /* Gallery padding */
+  div.bg-white.rounded-xl.shadow-lg {
+    margin: 0;
+  }
+  
+  /* Details summary - better mobile touch targets */
+  details summary {
+    min-height: 3rem;
+    padding: 0.75rem 1rem !important;
+  }
+  
+  /* Better text wrapping in summary */
+  details summary span {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Ensure icon doesn't shrink */
+  details summary svg {
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+  }
+  
+  /* Data list items - better mobile layout */
+  details dl > div {
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+  }
+  
+  details dl > div dt {
+    flex: 1 1 auto;
+    min-width: 40%;
+    margin-right: 0.5rem;
+  }
+  
+  details dl > div dd {
+    flex: 1 1 auto;
+    min-width: 40%;
+    text-align: left;
+  }
+  
+  /* Long text handling */
+  details dl > div dd.text-right {
+    text-align: right;
+    word-break: break-word;
+  }
+  
+  /* Equipment list items */
+  .details-icon-list {
+    padding-left: 0.5rem;
+  }
+  
+  .details-icon-list li {
+    padding-left: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.75;
+  }
+  
+  /* Details sections spacing */
+  section > div.space-y-6 {
+    gap: 1rem;
+  }
+  
+  details {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Sidebar cards - full width on mobile */
+  main .container > .grid > div:last-child > div > div {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Main container smaller padding */
+  main .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  /* Sections padding smaller */
+  section {
+    padding: 1rem !important;
+  }
+  
+  /* Smaller mobile adjustments */
+  details summary {
+    font-size: 0.875rem;
+    min-height: 2.75rem;
+    padding: 0.625rem 0.875rem !important;
+  }
+  
+  details dl > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  details dl > div dt,
+  details dl > div dd {
+    width: 100%;
+    text-align: left !important;
+    padding-bottom: 0.25rem;
+  }
+  
+  details dl > div dd.text-right {
+    text-align: left !important;
+  }
+  
+  /* Details content padding */
+  details > div.px-4 {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+  
+  .details-icon-list li {
+    padding-left: 1rem;
+    font-size: 0.8125rem;
+  }
+  
+  /* Smaller gap between sections */
+  main .container > .grid > div:first-child > div.space-y-12 {
+    gap: 1rem !important;
+  }
+  
+  /* Gallery thumbnails smaller on mobile */
+  .thumb-strip {
+    padding: 0.5rem;
+  }
+}
+
+</style>
+<style>
+/* Skip to content link - dostępność */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  background: #000000;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+}
+.skip-link:focus {
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+</style>
+</head> <body data-astro-cid-37fxchfa>  <a href="#main-content" class="skip-link">Przejdź do treści</a>  <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm backdrop-blur-sm bg-white/95" x-data="{ mobileMenuOpen: false, languageMenuOpen: false, currentLang: localStorage.getItem('language') || 'pl' }" x-init="document.documentElement.lang = currentLang"> <nav class="container mx-auto"> <div class="flex items-center justify-between h-24"> <!-- Mobile Layout: PRZEŁĄCZNIK, LOGO, MENU --> <!-- Language Switcher - Mobile (widoczny w headerze) --> <div class="lg:hidden relative" x-data="{ open: false }" @click.away="open = false"> <button @click="open = !open" class="flex items-center space-x-1 px-3 py-2 rounded-lg border border-gray-300 hover:border-primary hover:bg-gray-50 transition-all duration-200 text-sm font-medium text-gray-700"> <span x-text="currentLang === 'pl' ? 'PL' : currentLang === 'uk' ? 'UK' : 'EN'"></span> <svg class="w-3 h-3 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </button> <div x-show="open" x-transition class="absolute left-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50"> <button @click="currentLang = 'pl'; localStorage.setItem('language', 'pl'); document.documentElement.lang = 'pl'; open = false" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors" :class="{ 'bg-primary text-white': currentLang === 'pl', 'text-gray-700': currentLang !== 'pl' }"> <span>Polski</span> </button> <button @click="currentLang = 'uk'; localStorage.setItem('language', 'uk'); document.documentElement.lang = 'uk'; open = false" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors" :class="{ 'bg-primary text-white': currentLang === 'uk', 'text-gray-700': currentLang !== 'uk' }"> <span>Українська</span> </button> <button @click="currentLang = 'en'; localStorage.setItem('language', 'en'); document.documentElement.lang = 'en'; open = false" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors" :class="{ 'bg-primary text-white': currentLang === 'en', 'text-gray-700': currentLang !== 'en' }"> <span>English</span> </button> </div> </div> <!-- Logo (wyśrodkowany na mobile) --> <a href="/" class="flex items-center flex-1 justify-center lg:flex-none lg:justify-start"><img src="/images/logo.svg?v=1763334170" alt="Piekne auta" style="height: 206px; width: auto;"></a> <!-- Desktop Navigation --> <div class="hidden lg:flex items-center space-x-2"> <a href="/" class="px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out transform hover:scale-105 bg-primary text-white shadow-sm"> Strona główna </a><a href="/pages/samochody/" class="px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out transform hover:scale-105 text-gray-700 hover:text-primary hover:bg-gray-50"> Samochody </a><a href="/pages/o-nas/" class="px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out transform hover:scale-105 text-gray-700 hover:text-primary hover:bg-gray-50"> O nas </a><a href="/pages/leasing/" class="px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out transform hover:scale-105 text-gray-700 hover:text-primary hover:bg-gray-50"> Leasing </a><a href="/pages/ubezpieczenia/" class="px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out transform hover:scale-105 text-gray-700 hover:text-primary hover:bg-gray-50"> Ubezpieczenia </a><a href="/pages/kontakt/" class="px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out transform hover:scale-105 text-gray-700 hover:text-primary hover:bg-gray-50"> Kontakt </a> </div> <!-- Contact Info & Language - Desktop --> <div class="hidden lg:flex items-center space-x-4"> <!-- Language Switcher - Desktop --> <div class="relative" x-data="{ open: false }" @click.away="open = false"> <button @click="open = !open" class="flex items-center space-x-2 px-4 py-2 rounded-lg border border-gray-300 hover:border-primary hover:bg-gray-50 transition-all duration-200 text-sm font-medium text-gray-700"> <span x-text="currentLang === 'pl' ? 'PL' : currentLang === 'uk' ? 'UK' : 'EN'"></span> <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </button> <div x-show="open" x-transition class="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50"> <button @click="currentLang = 'pl'; localStorage.setItem('language', 'pl'); document.documentElement.lang = 'pl'; open = false" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors " :class="{ 'bg-primary text-white': currentLang === 'pl', 'text-gray-700': currentLang !== 'pl' }"> <span>Polski</span> </button> <button @click="currentLang = 'uk'; localStorage.setItem('language', 'uk'); document.documentElement.lang = 'uk'; open = false" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors " :class="{ 'bg-primary text-white': currentLang === 'uk', 'text-gray-700': currentLang !== 'uk' }"> <span>Українська</span> </button> <button @click="currentLang = 'en'; localStorage.setItem('language', 'en'); document.documentElement.lang = 'en'; open = false" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors " :class="{ 'bg-primary text-white': currentLang === 'en', 'text-gray-700': currentLang !== 'en' }"> <span>English</span> </button> </div> </div> <a href="tel:+48502428282" class="flex items-center space-x-2 text-primary hover:text-white transition-all px-5 py-2.5 border-2 border-primary rounded-lg hover:bg-primary font-semibold"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path> </svg> <span>502 42 82 82</span> </a> </div> <!-- Mobile Menu Button --> <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden p-2.5 rounded-lg hover:bg-gray-100 text-primary transition-colors" aria-label="Toggle menu"> <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"> <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path> <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path> </svg> </button> </div> <!-- Mobile Menu --> <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-gray-200 py-4 bg-white"> <div class="flex flex-col space-y-2"> <a href="/" class="px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ease-in-out bg-primary text-white"> Strona główna </a><a href="/pages/samochody/" class="px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ease-in-out text-gray-700 hover:bg-gray-100 hover:translate-x-1"> Samochody </a><a href="/pages/o-nas/" class="px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ease-in-out text-gray-700 hover:bg-gray-100 hover:translate-x-1"> O nas </a><a href="/pages/leasing/" class="px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ease-in-out text-gray-700 hover:bg-gray-100 hover:translate-x-1"> Leasing </a><a href="/pages/ubezpieczenia/" class="px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ease-in-out text-gray-700 hover:bg-gray-100 hover:translate-x-1"> Ubezpieczenia </a><a href="/pages/kontakt/" class="px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ease-in-out text-gray-700 hover:bg-gray-100 hover:translate-x-1"> Kontakt </a> <a href="tel:+48502428282" class="px-4 py-3 rounded-lg text-base font-semibold text-primary border-2 border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out transform hover:scale-[1.02] flex items-center space-x-2 mt-2"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path> </svg> <span>502 42 82 82</span> </a> </div> </div> </nav> </header> <main class="min-h-screen bg-gray-50"> <!-- Breadcrumbs --> <div class="bg-white border-b border-gray-100"> <div class="container mx-auto py-3 sm:py-4 md:py-5 px-4 sm:px-6"> <nav class="flex text-xs sm:text-sm text-gray-500 font-medium flex-wrap gap-1 sm:gap-0"> <a href="/" class="hover:text-primary transition-colors">STRONA GŁÓWNA</a> <span class="mx-3 text-gray-300">/</span> <a href="/pages/samochody/" class="hover:text-primary transition-colors">SAMOCHODY</a> <span class="mx-3 text-gray-300">/</span> <span class="text-primary font-semibold">Audi Q7</span> </nav> </div> </div> <!-- Main Content --> <div class="container mx-auto py-6 sm:py-8 md:py-12 px-4 sm:px-6"> <div class="grid lg:grid-cols-3 gap-6 sm:gap-8"> <!-- Left Column - Images & Details --> <div class="lg:col-span-2 space-y-12" x-data="galleryState()" x-init="init()" @keydown.window="handleKeydown($event)"> <!-- Gallery --> <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100"> <div class="relative aspect-[4/3] bg-black cursor-zoom-in" role="button" tabindex="0" @click="openLightbox()" @keydown.enter.prevent="openLightbox()" @keydown.space.prevent="openLightbox()"> <!-- Film YouTube (index 0) --> <div class="w-full h-full absolute inset-0" x-show="currentImage === 0" x-cloak>
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/29mNMCkLtX0" title="Audi Q7 - Film prezentacyjny" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full"></iframe>
+</div>
+
+<!-- Zdjęcia (index 1-71) --> <img src="/images/audi-q7-01.webp" alt="Audi Q7 - zdjęcie 1" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 1" x-cloak><img src="/images/audi-q7-02.webp" alt="Audi Q7 - zdjęcie 2" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 2" x-cloak><img src="/images/audi-q7-03.webp" alt="Audi Q7 - zdjęcie 3" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 3" x-cloak><img src="/images/audi-q7-04.webp" alt="Audi Q7 - zdjęcie 4" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 4" x-cloak><img src="/images/audi-q7-05.webp" alt="Audi Q7 - zdjęcie 5" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 5" x-cloak><img src="/images/audi-q7-06.webp" alt="Audi Q7 - zdjęcie 6" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 6" x-cloak><img src="/images/audi-q7-07.webp" alt="Audi Q7 - zdjęcie 7" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 7" x-cloak><img src="/images/audi-q7-08.webp" alt="Audi Q7 - zdjęcie 8" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 8" x-cloak><img src="/images/audi-q7-09.webp" alt="Audi Q7 - zdjęcie 9" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 9" x-cloak><img src="/images/audi-q7-10.webp" alt="Audi Q7 - zdjęcie 10" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 10" x-cloak><img src="/images/audi-q7-11.webp" alt="Audi Q7 - zdjęcie 11" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 11" x-cloak><img src="/images/audi-q7-12.webp" alt="Audi Q7 - zdjęcie 12" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 12" x-cloak><img src="/images/audi-q7-13.webp" alt="Audi Q7 - zdjęcie 13" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 13" x-cloak><img src="/images/audi-q7-14.webp" alt="Audi Q7 - zdjęcie 14" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 14" x-cloak><img src="/images/audi-q7-15.webp" alt="Audi Q7 - zdjęcie 15" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 15" x-cloak><img src="/images/audi-q7-16.webp" alt="Audi Q7 - zdjęcie 16" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 16" x-cloak><img src="/images/audi-q7-17.webp" alt="Audi Q7 - zdjęcie 17" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 17" x-cloak><img src="/images/audi-q7-18.webp" alt="Audi Q7 - zdjęcie 18" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 18" x-cloak><img src="/images/audi-q7-19.webp" alt="Audi Q7 - zdjęcie 19" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 19" x-cloak><img src="/images/audi-q7-20.webp" alt="Audi Q7 - zdjęcie 20" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 20" x-cloak><img src="/images/audi-q7-21.webp" alt="Audi Q7 - zdjęcie 21" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 21" x-cloak><img src="/images/audi-q7-22.webp" alt="Audi Q7 - zdjęcie 22" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 22" x-cloak><img src="/images/audi-q7-23.webp" alt="Audi Q7 - zdjęcie 23" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 23" x-cloak><img src="/images/audi-q7-24.webp" alt="Audi Q7 - zdjęcie 24" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 24" x-cloak><img src="/images/audi-q7-25.webp" alt="Audi Q7 - zdjęcie 25" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 25" x-cloak><img src="/images/audi-q7-26.webp" alt="Audi Q7 - zdjęcie 26" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 26" x-cloak><img src="/images/audi-q7-27.webp" alt="Audi Q7 - zdjęcie 27" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 27" x-cloak><img src="/images/audi-q7-28.webp" alt="Audi Q7 - zdjęcie 28" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 28" x-cloak><img src="/images/audi-q7-29.webp" alt="Audi Q7 - zdjęcie 29" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 29" x-cloak><img src="/images/audi-q7-30.webp" alt="Audi Q7 - zdjęcie 30" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 30" x-cloak><img src="/images/audi-q7-31.webp" alt="Audi Q7 - zdjęcie 31" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 31" x-cloak><img src="/images/audi-q7-32.webp" alt="Audi Q7 - zdjęcie 32" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 32" x-cloak><img src="/images/audi-q7-33.webp" alt="Audi Q7 - zdjęcie 33" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 33" x-cloak><img src="/images/audi-q7-34.webp" alt="Audi Q7 - zdjęcie 34" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 34" x-cloak><img src="/images/audi-q7-35.webp" alt="Audi Q7 - zdjęcie 35" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 35" x-cloak><img src="/images/audi-q7-36.webp" alt="Audi Q7 - zdjęcie 36" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 36" x-cloak><img src="/images/audi-q7-37.webp" alt="Audi Q7 - zdjęcie 37" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 37" x-cloak><img src="/images/audi-q7-38.webp" alt="Audi Q7 - zdjęcie 38" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 38" x-cloak><img src="/images/audi-q7-39.webp" alt="Audi Q7 - zdjęcie 39" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 39" x-cloak><img src="/images/audi-q7-40.webp" alt="Audi Q7 - zdjęcie 40" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 40" x-cloak><img src="/images/audi-q7-41.webp" alt="Audi Q7 - zdjęcie 41" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 41" x-cloak><img src="/images/audi-q7-42.webp" alt="Audi Q7 - zdjęcie 42" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 42" x-cloak><img src="/images/audi-q7-43.webp" alt="Audi Q7 - zdjęcie 43" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 43" x-cloak><img src="/images/audi-q7-44.webp" alt="Audi Q7 - zdjęcie 44" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 44" x-cloak><img src="/images/audi-q7-45.webp" alt="Audi Q7 - zdjęcie 45" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 45" x-cloak><img src="/images/audi-q7-46.webp" alt="Audi Q7 - zdjęcie 46" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 46" x-cloak><img src="/images/audi-q7-47.webp" alt="Audi Q7 - zdjęcie 47" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 47" x-cloak><img src="/images/audi-q7-48.webp" alt="Audi Q7 - zdjęcie 48" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 48" x-cloak><img src="/images/audi-q7-49.webp" alt="Audi Q7 - zdjęcie 49" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 49" x-cloak><img src="/images/audi-q7-50.webp" alt="Audi Q7 - zdjęcie 50" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 50" x-cloak><img src="/images/audi-q7-51.webp" alt="Audi Q7 - zdjęcie 51" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 51" x-cloak><img src="/images/audi-q7-52.webp" alt="Audi Q7 - zdjęcie 52" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 52" x-cloak><img src="/images/audi-q7-53.webp" alt="Audi Q7 - zdjęcie 53" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 53" x-cloak><img src="/images/audi-q7-54.webp" alt="Audi Q7 - zdjęcie 54" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 54" x-cloak><img src="/images/audi-q7-55.webp" alt="Audi Q7 - zdjęcie 55" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 55" x-cloak><img src="/images/audi-q7-56.webp" alt="Audi Q7 - zdjęcie 56" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 56" x-cloak><img src="/images/audi-q7-57.webp" alt="Audi Q7 - zdjęcie 57" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 57" x-cloak><img src="/images/audi-q7-58.webp" alt="Audi Q7 - zdjęcie 58" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 58" x-cloak><img src="/images/audi-q7-59.webp" alt="Audi Q7 - zdjęcie 59" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 59" x-cloak><img src="/images/audi-q7-60.webp" alt="Audi Q7 - zdjęcie 60" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 60" x-cloak><img src="/images/audi-q7-61.webp" alt="Audi Q7 - zdjęcie 61" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 61" x-cloak><img src="/images/audi-q7-62.webp" alt="Audi Q7 - zdjęcie 62" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 62" x-cloak><img src="/images/audi-q7-63.webp" alt="Audi Q7 - zdjęcie 63" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 63" x-cloak><img src="/images/audi-q7-64.webp" alt="Audi Q7 - zdjęcie 64" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 64" x-cloak><img src="/images/audi-q7-65.webp" alt="Audi Q7 - zdjęcie 65" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 65" x-cloak><img src="/images/audi-q7-66.webp" alt="Audi Q7 - zdjęcie 66" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 66" x-cloak><img src="/images/audi-q7-67.webp" alt="Audi Q7 - zdjęcie 67" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 67" x-cloak><img src="/images/audi-q7-68.webp" alt="Audi Q7 - zdjęcie 68" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 68" x-cloak><img src="/images/audi-q7-69.webp" alt="Audi Q7 - zdjęcie 69" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 69" x-cloak><img src="/images/audi-q7-70.webp" alt="Audi Q7 - zdjęcie 70" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 70" x-cloak><img src="/images/audi-q7-71.webp" alt="Audi Q7 - zdjęcie 71" class="car-image w-full h-full object-cover absolute inset-0" x-show="currentImage === 71" x-cloak>     <div class="gallery-counter"> <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7a2 2 0 012-2h2l1-1h6l1 1h2a2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V7z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 11l3 3 3-3"></path></svg> <span x-text="currentImage + 1"></span>/<span x-text="images.length + 1"></span> </div>  <button type="button" @click.stop="showPrev()" class="gallery-nav gallery-nav-left" aria-label="Poprzednie zdjęcie"> <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg> </button> <button type="button" @click.stop="showNext()" class="gallery-nav gallery-nav-right" aria-label="Następne zdjęcie"> <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg> </button>  </div>   <div class="p-2 sm:p-4">
+    <div class="thumb-strip" x-ref="thumbStrip">
+      <button data-index="0" @click="currentImage = 0" class="rounded-lg overflow-hidden border-2 transition-colors relative youtube-thumb" :class="currentImage === 0 ? 'border-primary' : 'border-gray-200'">
+        <img src="https://img.youtube.com/vi/29mNMCkLtX0/hqdefault.jpg" alt="Miniatura filmu Audi Q7" class="w-full h-full object-cover">
+        <div class="youtube-thumb-overlay" aria-hidden="true">
+          <svg class="youtube-play-button" viewBox="0 0 68 48" focusable="false">
+            <path data-part="bg" d="M66.52 7.02a8 8 0 00-5.65-5.66C56.08 0 34 0 34 0S11.92 0 7.13 1.36a8 8 0 00-5.65 5.66C0 11.81 0 24 0 24s0 12.19 1.48 16.98a8 8 0 005.65 5.66C11.92 48 34 48 34 48s22.08 0 26.87-1.36a8 8 0 005.65-5.66C68 36.19 68 24 68 24s0-12.19-1.48-16.98z" />
+            <path data-part="triangle" d="M45 24L27 14v20z" />
+          </svg>
+        </div>
+      </button>
+      <template x-for="index in 71" :key="index">
+        <button :data-index="index" @click="currentImage = index" class="rounded-lg overflow-hidden border-2 transition-colors" :class="currentImage === index ? 'border-primary' : 'border-gray-200'">
+          <img :src="'/images/audi-q7-' + String(index).padStart(2, '0') + '.webp'" :alt="'Miniatura ' + index" class="w-full h-full object-cover" loading="lazy" />
+        </button>
+      </template>
+    </div>
+  </div>
+</div>
+
+<template x-teleport="body">
+  <div x-show="lightboxOpen" x-cloak x-transition.opacity class="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm flex flex-col gap-6 px-4 py-8" @click.self="closeLightbox()">
+    <div class="relative w-full max-w-4xl mx-auto">
+      <button type="button" class="absolute -top-10 right-0 text-white/80 hover:text-white transition" @click="closeLightbox()" aria-label="Zamknij podgląd">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+      <div class="relative bg-black rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center w-full aspect-[4/3] max-h-[80vh]">
+        <template x-if="currentImage === 0">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/29mNMCkLtX0?rel=0" title="Audi Q7 - Film prezentacyjny" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="absolute inset-0 w-full h-full"></iframe>
+        </template>
+        <template x-if="currentImage !== 0">
+          <img :src="'/images/audi-q7-' + String(currentImage).padStart(2, '0') + '.webp'" :alt="'Audi Q7 - zdjęcie ' + currentImage" class="car-image absolute inset-0 w-full h-full object-cover" />
+        </template>
+        <div class="gallery-counter">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7a2 2 0 012-2h2l1-1h6l1 1h2a2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V7z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 11l3 3 3-3"></path></svg>
+          <span x-text="currentImage + 1"></span>/<span x-text="images.length + 1"></span>
+        </div>
+        <button type="button" @click.stop="showPrev()" class="gallery-nav gallery-nav-left" aria-label="Poprzednie zdjęcie">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button type="button" @click.stop="showNext()" class="gallery-nav gallery-nav-right" aria-label="Następne zdjęcie">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+      </div>
+    </div>
+    <div class="w-full max-w-4xl mx-auto">
+      <div class="p-2 sm:p-4">
+        <div class="thumb-strip" x-ref="thumbStripLightbox">
+        <button data-index="0" @click="currentImage = 0" class="rounded-lg overflow-hidden border-2 transition-colors relative youtube-thumb" :class="currentImage === 0 ? 'border-primary' : 'border-gray-200'">
+          <img src="https://img.youtube.com/vi/29mNMCkLtX0/hqdefault.jpg" alt="Miniatura filmu Audi Q7" class="w-full h-full object-cover">
+          <div class="youtube-thumb-overlay" aria-hidden="true">
+            <svg class="youtube-play-button" viewBox="0 0 68 48" focusable="false">
+              <path data-part="bg" d="M66.52 7.02a8 8 0 00-5.65-5.66C56.08 0 34 0 34 0S11.92 0 7.13 1.36a8 8 0 00-5.65 5.66C0 11.81 0 24 0 24s0 12.19 1.48 16.98a8 8 0 005.65 5.66C11.92 48 34 48 34 48s22.08 0 26.87-1.36a8 8 0 005.65-5.66C68 36.19 68 24 68 24s0-12.19-1.48-16.98z" />
+              <path data-part="triangle" d="M45 24L27 14v20z" />
+            </svg>
+          </div>
+        </button>
+        <template x-for="index in 38" :key="index">
+          <button :data-index="index" @click="currentImage = index" class="rounded-lg overflow-hidden border-2 transition-colors" :class="currentImage === index ? 'border-primary' : 'border-gray-200'">
+            <img :src="'/images/audi-q7-' + String(index).padStart(2, '0') + '.webp'" :alt="'Miniatura ' + index" class="w-full h-full object-cover" loading="lazy" />
+          </button>
+        </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<!-- Key Facts -->
+<section class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 sm:p-10 lg:p-12">
+  <h2 class="text-2xl sm:text-3xl font-bold text-primary mb-8">Najważniejsze</h2>
+  <dl class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-700">
+    <div class="flex justify-between border-b border-gray-100 pb-4">
+      <dt>Przebieg</dt>
+      <dd class="font-semibold text-gray-900">188 000 km</dd>
+    </div>
+    <div class="flex justify-between border-b border-gray-100 pb-4">
+      <dt>Rodzaj paliwa</dt>
+      <dd class="font-semibold text-gray-900">Hybryda</dd>
+    </div>
+    <div class="flex justify-between border-b border-gray-100 pb-4">
+      <dt>Skrzynia biegów</dt>
+      <dd class="font-semibold text-gray-900">Automatyczna</dd>
+    </div>
+    <div class="flex justify-between border-b border-gray-100 pb-4">
+      <dt>Typ nadwozia</dt>
+      <dd class="font-semibold text-gray-900">SUV</dd>
+    </div>
+    <div class="flex justify-between border-b border-gray-100 pb-4">
+      <dt>Pojemność skokowa</dt>
+      <dd class="font-semibold text-gray-900">2 967 cm3</dd>
+    </div>
+    <div class="flex justify-between pb-1">
+      <dt>Moc</dt>
+      <dd class="font-semibold text-gray-900">286 KM</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- Description -->
+<section class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 sm:p-10 lg:p-12" x-data="{ expanded: false }">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 border-b border-gray-100 pb-6">
+    <h2 class="text-2xl sm:text-3xl font-bold text-primary">Opis pojazdu</h2>
+    <button x-show="!expanded" @click="expanded = true" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition-colors">
+      Pokaż pełny opis
+    </button>
+  </div>
+  <div class="space-y-6 text-gray-700 leading-relaxed">
+    <div class="space-y-4">
+      <p>Pracujemy 7 dni w tygodniu, samochód jest na oświetlonej hali, spotykamy się indywidualnie, w ustalonym wcześniej terminie. Po realizacji formalności, możemy zlecić zawiezienie samochodu lawetą pod dom w całym kraju.</p>
+      <p>Dealer i wiarygodny dostawca firm leasingowych od 1997r, oferuje do sprzedaży lub preferencyjnego, uproszczonego leasingu, salonowe i w wyjątkowej konfiguracji, Audi Q7 V6TDI 286 KM plus miękka hybryda mHev z pakietami S-Line, Black Exclusive oraz pełna lista opcji w idealnym stanie, serwisowane w Audi plus wymiany oleju co 10/12 tyś km, rzetelnym i pewnym przebiegu, pisemną historią na każdą śrubkę, bogatym wyposażeniu i atrakcyjnej cenie.</p>
+    </div>
+    <div class="space-y-4" x-show="expanded" x-transition>
+      <p>Samochód we wrześniu 2025 roku po ponadnormatywny, przeglądzie z wymianą oleju, kompletu filtrów. Wymienione hamulce przód i tył sportowe tarcze i klocki, wszystkie filtry i oleje, płyn hamulcowy itd. Samochód od nowości serwisowany ponadnormatywnie oraz regularnie. Mamy pisemną historię na każdą śrubkę od nowości, certyfikat z Audi z badaniem lakieru, certyfikat Gwarancji Audi i pełną dokumentację, komplet kluczyków etc.</p>
+      <p>VIN WAUZZZ4M5KD035110 - proszę sprawdzić auto w dowolnym rejestrze, serwisie i zapytać o opinię. Uwaga - żadnej szkody od nowości.</p>
+      <p>Samochod do 2025 roku z kompletną obsługą gwarancyjną Audi. Pierwotnie na 5-letniej gwarancji fabrycznej do 150 tyś km plus kolejny rok na opcjonalnej Audi Protect - łącznie 6 lat na pełnej gwarancji Audi - stąd opieka producenta i bardzo dobry stan techniczny nie budzi żadnych wątpliwości.</p>
+      <p><strong>AUTO PEDANTYCZNIE ZADBANE.</strong></p>
+      <p><strong>Wyposażenie:</strong> Wersja Exclusive, Lakier perłowy niebieski Nawarra - w zależności od światła różne odcienie, najmocniejsza wersja 6-cylidrowego diesla pojemności 3.0 TDI 286 KM wspomaganego miękką hybrydą mHev, napęd 4x4 Quattro z samoblokującym się mechanizmem różnicowym, pneumatyczne zawieszenie, hamulce SQ7 sportowe z czerwonymi zaciskami, pakiety Exclusive, S-Line, Sport-line i Black Exclusive, koła 21 cali w stylizacji Audi Sport, czerń rur wydechowych, hak holowniczy w pełni elektryczny, automatyczny, ogrzewanie postojowe vebasto, pneumatyczne zawieszenie, lusterka w optyce SQ7, przyciemnione szyby, Światła Matrix z dynamiczną regulacją zasięgu reflektorów i skrętne do jazdy dziennej LED, Światła tylne w technologii LED, kierunkowskazy pływające, fotele z trzymaniem bocznym S-Line, tłoczenie S-Line na fotelach, wielkonturowe, elektryczne, podgrzewaniem i pamięciami, pełna skóra cielęca plus perforowana alkantara z obszyciem kontrastowym, podgrzewanie foteli tył i przód, klimatyzacja automatyczna z tyłu i przodu, podsufitka czarna, stalowe nakładki pedałów i podstopnicy SQ7, kamera z aut systemem parkowania plus parktronik przód/tył, System nagłaśniający Audi Sound System z subwooferem, rolety na szyby boczne i tylną, Kierownica sportowa S-Line wielofunkcyjna, skórzana z łopatkami, progi S-Line podświetlane, sterowanie głosowe, podparcie lędźwi foteli elektryczne, pneumatyczne i adaptacyjne zawieszenie plus pneumatyka, fotele kapitańskie - pojedyncze w 2 drugim rządzie z pełną regulacją/pochyleniem, wykończenie wnętrza w szczotkowanym aluminium i drewnie naturalnym, Isofixy przód i tył, Multi Media Interface, Nawigacja z Google, Bluetooth, internet, Komputer pokładowy, Internet LTE - wzmocniony sygnał, phone box, aktywny pakiet Audi Connect, Audi music interface - iPoda i iPhone Apple USB, odtwarzacza MP3, Audi music interface obsługa poprzez panel MMI, CD i DVD, czytnik kart MP3, WMA, AAC, Audi drive select - regulacja charakterystyki układu kierowniczego/zawieszenie/skrzyni biegów, Czujnik zmierzchowy świateł i czujnik deszczu, Dysze spryskiwaczy, ogrzewane, Listwy ozdobne wokół szyb czarne Exclusive, Nadwozie w konstrukcji hybrydowej, rozdział momentu obrotowego osobno na każde koło, uzależniony od sytuacji na drodze, System Start/Stop - optymalizuje zużycie paliwa, automatyczna zmiana świateł z mijania na drogowe bez ingerencji kierującego, Szyby termoizolacyjne i dźwiękoszczelne, asystent kierowcy, automat światła długie/krótkie, Lusterka automatycznie składane z funkcją przeciwoślepieniową, Audi parking system plus (przód/tył) z wizualizacją na ekranie MMI + kamera, asystent parkowania, asystent świateł drogowych, światła autostradowe z automatycznie wydłużonym zasięgiem reflektorów, funkcja dostosowania oświetlenia dla zmniejszenia efektu oślepienia kierowcy w złych warunkach, statyczne światła skrętne, lusterko wewnętrzne z automatyczną funkcją przeciwoślepieniową, komfortowy podłokietnik przód i tył, Wnęka do przewozu nart, Wspomaganie otwarcia i zamknięcia bagażnika elektryczne, pakiet schowek, tempomat z funkcją hamowania, Audi pre sense, zbiornik paliwa fabrycznie większy 85 litrów, relingi dachowe itd.</p>
+      <div>
+        <h3 class="text-xl font-semibold text-primary mb-2">Opcje zakupu:</h3>
+        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+          <li>- sprzedaż, cena 144900 PLN oraz FV 23%.</li>
+          <li>- możliwość cesji końcówki leasingu: pozostało 12 rat po 3100 PLN, wykup 1800 PLN i odstępne 115 tyś PLN oraz VAT do ustalenia.</li>
+          <li>- lub zawarcie nowej umowy leasingu na preferencyjnych warunkach w procedurze uproszczonej.</li>
+        </ul>
+      </div>
+      <p>Prosimy o kontakt celem omówienia szczegółów.</p>
+      <p>Auto jest gruntownie sprawdzone pod względem technicznym i formalnoprawnym a Kupujący ma bezpieczeństwo przy zawieraniu transakcji, otrzymuje pełną fakturę, gwarancję prawdziwości licznika kilometrów, historii przedmiotu i profesjonalizmu w działaniu.</p>
+      <button @click="expanded = false" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg border border-gray-300 text-gray-700 hover:border-primary hover:text-primary transition-colors">
+        Ukryj pełny opis
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Details -->
+<section class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 sm:p-10 lg:p-12">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 border-b border-gray-100 pb-6">
+    <h2 class="text-2xl sm:text-3xl font-bold text-primary">Szczegóły</h2>
+  </div>
+  <div class="space-y-6">
+    <details class="border border-gray-200 rounded-xl bg-gray-50">
+      <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none text-sm font-semibold text-gray-900">
+        <span>Podstawowe</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"></path></svg>
+      </summary>
+      <div class="px-4 pb-4">
+        <dl class="space-y-3 text-sm text-gray-700">
+          <div class="flex justify-between"><dt>Marka pojazdu</dt><dd class="font-semibold text-gray-900">Audi</dd></div>
+          <div class="flex justify-between"><dt>Model pojazdu</dt><dd class="font-semibold text-gray-900">Q7</dd></div>
+          <div class="flex justify-between"><dt>Wersja</dt><dd class="font-semibold text-gray-900 text-right">50 TDI mHEV Quattro Black Edition Tiptr</dd></div>
+          <div class="flex justify-between"><dt>Kolor</dt><dd class="font-semibold text-gray-900">Niebieski</dd></div>
+          <div class="flex justify-between"><dt>Liczba drzwi</dt><dd class="font-semibold text-gray-900">5</dd></div>
+          <div class="flex justify-between"><dt>Liczba miejsc</dt><dd class="font-semibold text-gray-900">5</dd></div>
+          <div class="flex justify-between"><dt>Rok produkcji</dt><dd class="font-semibold text-gray-900">2019</dd></div>
+          <div class="flex justify-between"><dt>Generacja</dt><dd class="font-semibold text-gray-900">II (2015-)</dd></div>
+          <div class="flex justify-between"><dt>VIN</dt><dd class="font-semibold text-gray-900 font-mono">WAUZZZ4M5KD035110</dd></div>
+        </dl>
+      </div>
+    </details>
+    <details class="border border-gray-200 rounded-xl bg-gray-50">
+      <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none text-sm font-semibold text-gray-900">
+        <span>Specyfikacja</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"></path></svg>
+      </summary>
+      <div class="px-4 pb-4">
+        <dl class="space-y-3 text-sm text-gray-700">
+          <div class="flex justify-between"><dt>Rodzaj paliwa</dt><dd class="font-semibold text-gray-900">Hybryda</dd></div>
+          <div class="flex justify-between"><dt>Pojemność skokowa</dt><dd class="font-semibold text-gray-900">2 967 cm3</dd></div>
+          <div class="flex justify-between"><dt>Moc</dt><dd class="font-semibold text-gray-900">286 KM</dd></div>
+          <div class="flex justify-between"><dt>Typ nadwozia</dt><dd class="font-semibold text-gray-900">SUV</dd></div>
+          <div class="flex justify-between"><dt>Rodzaj koloru</dt><dd class="font-semibold text-gray-900">Metalik</dd></div>
+          <div class="flex justify-between"><dt>Skrzynia biegów</dt><dd class="font-semibold text-gray-900">Automatyczna</dd></div>
+          <div class="flex justify-between"><dt>Napęd</dt><dd class="font-semibold text-gray-900">4x4 (stały)</dd></div>
+          <div class="flex justify-between"><dt>Emisja CO₂</dt><dd class="font-semibold text-gray-900">182 g/km</dd></div>
+          <div class="flex justify-between"><dt>Spalanie w mieście</dt><dd class="font-semibold text-gray-900">8.7 l/100 km</dd></div>
+          <div class="flex justify-between"><dt>Spalanie poza miastem</dt><dd class="font-semibold text-gray-900">5.9 l/100 km</dd></div>
+        </dl>
+      </div>
+    </details>
+    <details class="border border-gray-200 rounded-xl bg-gray-50">
+      <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none text-sm font-semibold text-gray-900">
+        <span>Stan i historia</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"></path></svg>
+      </summary>
+      <div class="px-4 pb-4">
+        <dl class="space-y-3 text-sm text-gray-700">
+          <div class="flex justify-between"><dt>Kraj pochodzenia</dt><dd class="font-semibold text-gray-900">Polska</dd></div>
+          <div class="flex justify-between"><dt>Przebieg</dt><dd class="font-semibold text-gray-900">188 000 km</dd></div>
+          <div class="flex justify-between"><dt>Numer rejestracyjny</dt><dd class="font-semibold text-gray-900">WI602NF</dd></div>
+          <div class="flex justify-between"><dt>Stan</dt><dd class="font-semibold text-gray-900">Używany</dd></div>
+          <div class="flex justify-between"><dt>Data pierwszej rejestracji</dt><dd class="font-semibold text-gray-900">26 kwietnia 2019</dd></div>
+          <div class="flex justify-between"><dt>Zarejestrowany w Polsce</dt><dd class="font-semibold text-gray-900">Tak</dd></div>
+          <div class="flex justify-between"><dt>Bezwypadkowy</dt><dd class="font-semibold text-gray-900">Tak</dd></div>
+          <div class="flex justify-between"><dt>Ma numer rejestracyjny</dt><dd class="font-semibold text-gray-900">Tak</dd></div>
+          <div class="flex justify-between"><dt>Serwisowany w ASO</dt><dd class="font-semibold text-gray-900">Tak</dd></div>
+        </dl>
+      </div>
+    </details>
+    <details class="border border-gray-200 rounded-xl bg-gray-50">
+      <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none text-sm font-semibold text-gray-900">
+        <span>Finansowanie i koszty</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"></path></svg>
+      </summary>
+      <div class="px-4 pb-4">
+        <dl class="space-y-3 text-sm text-gray-700">
+          <div class="flex justify-between"><dt>Możliwość finansowania</dt><dd class="font-semibold text-gray-900">Tak</dd></div>
+          <div class="flex justify-between"><dt>Leasing</dt><dd class="font-semibold text-gray-900">Tak</dd></div>
+          <div class="flex justify-between"><dt>Opłata początkowa</dt><dd class="font-semibold text-gray-900">115 000 PLN</dd></div>
+          <div class="flex justify-between"><dt>Miesięczna rata</dt><dd class="font-semibold text-gray-900">3 100 PLN</dd></div>
+          <div class="flex justify-between"><dt>Liczba pozostałych rat</dt><dd class="font-semibold text-gray-900">12</dd></div>
+          <div class="flex justify-between"><dt>Wartość wykupu</dt><dd class="font-semibold text-gray-900">1 800 PLN</dd></div>
+        </dl>
+      </div>
+    </details>
+  </div>
+</section>
+<!-- Equipment -->
+<section class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 sm:p-10 lg:p-12">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 border-b-2 border-gray-100 pb-6">
+    <h2 class="text-2xl sm:text-3xl font-bold text-primary">Wyposażenie</h2>
+  </div>
+  <div class="space-y-6">
+    <details class="border border-gray-200 rounded-xl bg-gray-50" x-data="{ open: false }" @toggle="open = !open">
+      <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none text-sm font-semibold text-gray-900">
+        <span>Audio i multimedia</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"></path></svg>
+      </summary>
+      <div class="px-4 pb-4">
+        <ul class="details-icon-list text-sm text-gray-700">
+          <li>Apple CarPlay</li>
+          <li>Android Auto</li>
+          <li>Interfejs Bluetooth</li>
+          <li>Radio</li>
+          <li>Zestaw głośnomówiący</li>
+          <li>Gniazdo USB</li>
+          <li>Ładowanie bezprzewodowe urządzeń</li>
+          <li>System nawigacji satelitarnej</li>
+          <li>System nagłośnienia</li>
+          <li>Ekran dotykowy</li>
+          <li>Sterowanie funkcjami pojazdu za pomocą głosu</li>
+          <li>Dostęp do internetu</li>
+        </ul>
+      </div>
+    </details>
+    <details class="border border-gray-200 rounded-xl bg-gray-50">
+      <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none text-sm font-semibold text-gray-900">
+        <span>Komfort i dodatki</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"></path></svg>
+      </summary>
+      <div class="px-4 pb-4">
+        <ul class="details-icon-list text-sm text-gray-700">
+          <li>Hak holowniczy</li>
+          <li>Klimatyzacja automatyczna (4 lub więcej strefowa)</li>
+          <li>Rolety na bocznych szybach opuszczane ręcznie</li>
+          <li>Tapicerka skórzana</li>
+          <li>Klimatyzacja dla pasażerów z tyłu</li>
+          <li>Elektrycznie ustawiany fotel kierowcy</li>
+          <li>Elektrycznie ustawiany fotel pasażera</li>
+          <li>Podgrzewany fotel kierowcy</li>
+          <li>Podgrzewany fotel pasażera</li>
+          <li>Regulowane elektronicznie podparcie lędźwiowe (kierowca)</li>
+          <li>Regulowane elektronicznie podparcie lędźwiowe (pasażer)</li>
+          <li>Siedzenie z pamięcią ustawienia</li>
+          <li>Sportowe fotele (przód)</li>
+          <li>Ogrzewane siedzenia tylne</li>
+          <li>Podłokietniki - przód</li>
+          <li>Podłokietniki - tył</li>
+          <li>Kierownica skórzana</li>
+          <li>Kierownica sportowa</li>
+          <li>Kierownica ze sterowaniem radia</li>
+          <li>Kierownica wielofunkcyjna</li>
+          <li>Zmiana biegów w kierownicy</li>
+          <li>Dźwignia zmiany biegów wykończona skórą</li>
+          <li>Keyless entry</li>
+          <li>Keyless Go</li>
+          <li>Uruchamianie silnika bez użycia kluczyków</li>
+          <li>Ogrzewanie postojowe</li>
+          <li>Automatyczna kontrola ogrzewania</li>
+          <li>Czujnik deszczu</li>
+          <li>Elektryczne szyby przednie</li>
+          <li>Elektryczne szyby tylne</li>
+          <li>Przyciemniane tylne szyby</li>
+          <li>Automatyczne wycieraczki</li>
+        </ul>
+      </div>
+    </details>
+    <details class="border border-gray-200 rounded-xl bg-gray-50">
+      <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none text-sm font-semibold text-gray-900">
+        <span>Systemy wspomagania kierowcy</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"></path></svg>
+      </summary>
+      <div class="px-4 pb-4">
+        <ul class="details-icon-list text-sm text-gray-700">
+          <li>Tempomat adaptacyjny ACC</li>
+          <li>Lampy przednie w technologii LED</li>
+          <li>Kontrola odległości z przodu (parkowanie)</li>
+          <li>Kontrola odległości z tyłu (parkowanie)</li>
+          <li>Park Assistant - asystent parkowania</li>
+          <li>Niezależny system parkowania</li>
+          <li>Kamera parkowania tył</li>
+          <li>Lusterka boczne ustawiane elektrycznie</li>
+          <li>Podgrzewane lusterka boczne</li>
+          <li>Lusterka boczne składane elektrycznie</li>
+          <li>Asystent martwego pola</li>
+          <li>Aktywny asystent zmiany pasa ruchu</li>
+          <li>Lane assist - kontrola zmiany pasa ruchu</li>
+          <li>Kontrola odległości od poprzedzającego pojazdu</li>
+          <li>Ogranicznik prędkości</li>
+          <li>Asystent hamowania - Brake Assist</li>
+          <li>Asystent pokonywania zakrętów</li>
+          <li>Kontrola trakcji</li>
+          <li>Automatyczna kontrola zjazdu ze stoku</li>
+          <li>Wspomaganie ruszania pod górę (Hill Holder)</li>
+          <li>Aktywne rozpoznawanie znaków ograniczenia prędkości</li>
+          <li>System rozpoznawania znaków drogowych</li>
+          <li>Asystent zapobiegania kolizjom na skrzyżowaniu</li>
+          <li>Autonomiczny system kierowania</li>
+          <li>Asystent świateł drogowych</li>
+          <li>Oświetlenie adaptacyjne</li>
+          <li>Dynamiczne światła doświetlające zakręty</li>
+          <li>Czujnik zmierzchu</li>
+          <li>Spryskiwacze reflektorów</li>
+          <li>Lampy doświetlające zakręt</li>
+          <li>Światła do jazdy dziennej</li>
+          <li>Światła do jazdy dziennej diodowe LED</li>
+          <li>Lampy przeciwmgielne</li>
+          <li>Lampy przeciwmgielne w technologii LED</li>
+          <li>Lampy tylne w technologii LED</li>
+          <li>Oświetlenie drogi do domu</li>
+          <li>Oświetlenie wnętrza LED</li>
+          <li>System Start/Stop</li>
+          <li>Elektroniczna kontrola ciśnienia w oponach</li>
+          <li>Elektryczny hamulec postojowy</li>
+          <li>Wspomaganie kierownicy</li>
+          <li>Asystent jazdy w korku</li>
+        </ul>
+      </div>
+    </details>
+    <details class="border border-gray-200 rounded-xl bg-gray-50">
+      <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none text-sm font-semibold text-gray-900">
+        <span>Osiągi i tuning</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"></path></svg>
+      </summary>
+      <div class="px-4 pb-4">
+        <ul class="details-icon-list text-sm text-gray-700">
+          <li>Felgi aluminiowe od 21"</li>
+          <li>Opony letnie</li>
+          <li>Zawieszenie komfortowe</li>
+          <li>Elektroniczna regulacja charakterystyki zawieszenia</li>
+          <li>Zawieszenie sportowe</li>
+          <li>Zawieszenie regulowane</li>
+          <li>Zawieszenie pneumatyczne</li>
+          <li>Zawieszenie hydropneumatyczne</li>
+        </ul>
+      </div>
+    </details>
+    <details class="border border-gray-200 rounded-xl bg-gray-50">
+      <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none text-sm font-semibold text-gray-900">
+        <span>Bezpieczeństwo</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"></path></svg>
+      </summary>
+      <div class="px-4 pb-4">
+        <ul class="details-icon-list text-sm text-gray-700">
+          <li>ABS</li>
+          <li>ESP</li>
+          <li>Elektroniczny system rozdziału siły hamowania</li>
+          <li>System wspomagania hamowania</li>
+          <li>Asystent hamowania awaryjnego w mieście</li>
+          <li>System hamowania awaryjnego dla ochrony pieszych</li>
+          <li>Aktywny asystent hamowania awaryjnego</li>
+          <li>System ostrzegający o możliwej kolizji</li>
+          <li>System ochrony słuchu w przypadku kolizji</li>
+          <li>System chroniący przed kolizją, tylny</li>
+          <li>System chroniący przed kolizją, boczny</li>
+          <li>Alarm ruchu poprzecznego z tyłu pojazdu</li>
+          <li>System emitujący dźwięk silnika (AVAS)</li>
+          <li>System wykrywania zmęczenia kierowcy</li>
+          <li>System rekomendacji przerw podczas trasy</li>
+          <li>Aktywny system monitorowania kondycji kierowcy</li>
+          <li>Asystent pasa ruchu</li>
+          <li>System minimalizujący skutki kolizji</li>
+          <li>System powiadamiania o wypadku</li>
+          <li>Poduszka powietrzna kierowcy</li>
+          <li>Poduszka powietrzna pasażera</li>
+          <li>Kurtyny powietrzne - przód</li>
+          <li>Poduszka powietrzna centralna</li>
+          <li>Boczna poduszka powietrzna kierowcy</li>
+          <li>Boczne poduszki powietrzne - przód</li>
+          <li>Kurtyny powietrzne - tył</li>
+          <li>Boczne poduszki powietrzne - tył</li>
+          <li>Kurtyna powietrzna z tyłu, poprzeczna</li>
+          <li>Isofix (punkty mocowania fotelika dziecięcego)</li>
+          <li>System zabezpieczający podczas dachowania</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+<!-- Lokalizacja pojazdu -->
+<section class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 sm:p-10 lg:p-12">
+  <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8 border-b-2 border-gray-100 pb-6">
+    <div>
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary">Lokalizacja pojazdu</h2>
+      <p class="text-sm text-gray-500">Hala ekspozycyjna · 53.70573, 16.69825 (Szczecinek)</p>
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=53.70573%2C16.69825" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition-colors">
+      <span>Otwórz trasę</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+  <div class="aspect-video rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+    <iframe src="https://maps.google.com/maps?q=53.70573,16.69825&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-full"></iframe>
+  </div>
+  <a href="https://www.google.com/maps/search/?api=1&query=53.70573%2C16.69825" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-primary mt-4">
+    Zobacz w Mapach Google
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+</section>
+<!-- Brochure -->
+<div class="bg-primary rounded-xl shadow-lg p-10 lg:p-12 border-2 border-gray-800">
+  <div class="flex items-start space-x-4">
+    <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div class="flex-1">
+      <h3 class="text-2xl font-bold mb-3" style="color: #e5e7eb !important;">Broszura pojazdu</h3>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+Pobierz szczegółową broszurę z pełną specyfikacją, zdjęciami i opisem tego pojazdu.
+      </p>
+      <a href="/pages/reports/audi-q7-broszura.html" class="inline-flex items-center justify-center font-semibold transition-all duration-200 bg-white text-primary hover:bg-gray-50 px-6 py-3 text-base rounded-xl shadow-lg">
+Pobierz broszurę PDF
+      </a>
+    </div>
+  </div>
+</div>
+<!-- Right Column - Sticky Sidebar -->
+</div>
+<div class="lg:col-span-1">
+  <div class="sticky top-24 space-y-6 sticky-lightbox-hide">
+    <!-- Price Card -->
+    <div class="bg-white rounded-xl shadow-sm p-8 border border-gray-200">
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-accent text-white shadow-lg">
+            DOSTĘPNY
+          </span>
+        </div>
+        <h1 class="text-2xl font-bold text-primary mb-2">Audi Q7</h1>
+        <p class="text-gray-600">50 TDI mHEV Quattro Black Edition Tiptr</p>
+      </div>
+      <div class="pt-6 mb-6">
+        <div class="text-3xl font-bold text-primary mb-2">144 900 zł</div>
+        </div>
+      <div class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <a href="tel:+48502428282" class="inline-flex items-center justify-center font-semibold transition-all duration-200 bg-primary text-white hover:bg-primary/90 px-6 py-3 text-base rounded-lg h-14 w-full shadow-sm">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            Zadzwoń
+          </a>
+          <a href="/pages/kontakt/?action=napisz&car=Audi%20Q7%202019%20-%2050%20TDI%20mHEV%20Quattro%20Black%20Edition%20Tiptr" class="inline-flex items-center justify-center font-semibold transition-all duration-200 border-2 border-gray-300 text-gray-700 hover:border-primary hover:text-primary px-6 py-3 text-base rounded-lg h-14 w-full">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            Napisz
+          </a>
+        </div>
+        <a href="/pages/kontakt/?action=rezerwacja&car=Audi%20Q7%202019%20-%2050%20TDI%20mHEV%20Quattro%20Black%20Edition%20Tiptr" class="inline-flex items-center justify-center font-semibold transition-all duration-200 bg-accent text-white hover:bg-accent/90 px-6 py-3 text-base rounded-lg h-14 w-full shadow-lg">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+          Zarezerwuj
+        </a>
+      </div>
+    </div>
+    <!-- Contact Info -->
+    <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+      <h3 class="font-bold text-primary mb-5 text-lg">KONTAKT</h3>
+      <div class="space-y-4 text-sm">
+        <a href="tel:+48502428282" class="flex items-center space-x-3 text-gray-700 hover:text-accent transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          <span>502 42 82 82</span>
+        </a>
+        <a href="mailto:twojleasing@me.com" class="flex items-center space-x-3 text-gray-700 hover:text-accent transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          <span>twojleasing@me.com</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Podobne oferty -->
+<section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 border-t border-gray-200 px-4 sm:px-6">
+<div class="container mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">Podobne oferty</h2>
+<div class="w-20 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
+
+<article class="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md hover:border-accent/30 transition-all duration-200 overflow-hidden group">
+<a href="/pages/samochody/audi-a8-2019-50tdi-quattro/" class="block">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+<img src="/images/audi-a8-01.webp" alt="Audi A8" class="w-full h-full object-cover" loading="lazy">
+<div class="absolute top-3 right-3 z-10"><span class="px-3 py-1.5 rounded-full text-xs font-bold bg-accent text-white shadow-lg">DOSTĘPNY</span></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-primary mb-1">Audi A8</h3>
+<p class="text-sm text-gray-500 mb-6">50 TDI mHEV Quattro Tiptronic</p>
+<div class="flex items-end justify-between">
+<div class="text-2xl font-bold text-primary">249 900 zł</div>
+<div class="text-accent font-bold group-hover:translate-x-1 transition-transform">→</div>
+</div>
+</div>
+</a>
+</article>
+
+<article class="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md hover:border-accent/30 transition-all duration-200 overflow-hidden group">
+<a href="/pages/samochody/bmw-seria-7-2018-730d-xdrive/" class="block">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+<div class="car-slider w-full h-full relative">
+<div class="car-slide active">
+<img src="/images/bmw-7-01.webp" alt="BMW Seria 7" class="w-full h-full object-cover" loading="lazy">
+</div>
+<div class="car-slide">
+<img src="/images/bmw-7-04.webp" alt="BMW Seria 7" class="w-full h-full object-cover" loading="lazy">
+</div>
+<div class="car-slide">
+<img src="/images/bmw-7-07.webp" alt="BMW Seria 7" class="w-full h-full object-cover" loading="lazy">
+</div>
+<div class="car-slide">
+<img src="/images/bmw-7-10.webp" alt="BMW Seria 7" class="w-full h-full object-cover" loading="lazy">
+</div>
+</div>
+<div class="absolute top-3 right-3 z-10"><span class="px-3 py-1.5 rounded-full text-xs font-bold bg-accent text-white shadow-lg">DOSTĘPNY</span></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-primary mb-1">BMW Seria 7</h3>
+<p class="text-sm text-gray-500 mb-6">730d xDrive M Sport</p>
+<div class="flex items-end justify-between">
+<div class="text-2xl font-bold text-primary">189 900 zł</div>
+<div class="text-accent font-bold group-hover:translate-x-1 transition-transform">→</div>
+</div>
+</div>
+</a>
+</article>
+</div>
+<div class="text-center mt-16">
+<a href="/pages/samochody/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-accent px-8 py-4 text-lg rounded-xl transform hover:scale-[1.01] transition-all">
+Zobacz wszystkie samochody →
+</a>
+</div>
+</div>
+</section>
+
+</main> <section class="py-20 text-white" style="background-color: #212121 !important;"> <div class="container mx-auto text-center"> <div class="max-w-3xl mx-auto"> <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: #ffffff !important; text-transform: none !important;">Serdecznie Zapraszamy</h2> <p class="text-lg mb-8" style="color: #e0e0e0 !important;">Zrealizujemy Twoje marzenia</p> <div class="flex flex-col sm:flex-row items-center justify-center gap-4"> <a href="tel:+48502428282" class="inline-flex items-center space-x-2 bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold transition-all shadow-lg"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"> <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/> </svg> <span>Zadzwoń: 502 42 82 82</span> </a> <a href="/pages/kontakt/" class="inline-flex items-center space-x-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-xl font-semibold transition-all shadow-md"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"> <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/> </svg> <span>Formularz kontaktowy</span> </a> </div> </div> </div> </section> <!-- FOOTER - NEW PREMIUM DESIGN --> <footer class="bg-primary text-white relative overflow-hidden border-t border-gray-800"> <div class="container mx-auto"> <!-- Main Footer Content --> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 py-16 border-b border-gray-800/50"> <!-- Company Info - Larger Column --> <div class="lg:col-span-5"> <a href="/" class="inline-block mb-3 group">
+        <img src="/images/logo.svg?v=1763334170" alt="Piekne auta" style="height: 206px; width: auto; filter: brightness(0) invert(1);" class="group-hover:opacity-80 transition-opacity">
+      </a> <p class="text-gray-400 leading-relaxed mb-4 text-base">
+Samochody używane premium oraz fabrycznie nowe. Sprzedaż i leasing środków trwałych.
+</p> <div class="flex items-center space-x-2 text-gray-400 mb-3"> <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/> </svg> <span class="font-semibold text-white">28 lat doświadczenia</span> </div> <div class="flex items-center space-x-2 text-gray-400 mb-3"> <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/> </svg> <a href="https://lozaprzedsiebiorcow.pl" target="_blank" rel="noopener" class="text-white hover:text-accent transition-colors font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent rounded">Loża Przedsiębiorców</a> </div> <div class="flex items-center space-x-2 text-gray-400"> <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/> </svg> <a href="https://www.rzetelnafirma.pl" target="_blank" rel="noopener" class="text-white hover:text-accent transition-colors font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent rounded">Rzetelna Firma</a> </div> </div> <!-- Quick Links --> <div class="lg:col-span-2"> <h4 class="font-bold text-lg mb-6 text-white">Nawigacja</h4> <ul class="space-y-3"> <li><a href="/" class="text-gray-400 hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">Strona główna</a></li> <li><a href="/pages/samochody/" class="text-gray-400 hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">Katalog samochodów</a></li> <li><a href="/pages/o-nas/" class="text-gray-400 hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">O nas</a></li> <li><a href="/pages/leasing/" class="text-gray-400 hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">Leasing</a></li> <li><a href="/pages/ubezpieczenia/" class="text-gray-400 hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">Ubezpieczenia</a></li> <li><a href="/pages/kontakt/" class="text-gray-400 hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">Kontakt</a></li> </ul> </div> <!-- Contact --> <div class="lg:col-span-3"> <h4 class="font-bold text-lg mb-6 text-white">Kontakt</h4> <div class="space-y-4"> <a href="tel:+48502428282" class="flex items-center space-x-3 text-gray-400 hover:text-accent transition-colors group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent rounded-lg"> <div class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center group-hover:bg-accent transition-colors"> <svg class="w-5 h-5 group-hover:text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/> </svg> </div> <div> <div class="text-xs text-gray-500">Telefon</div> <div class="font-semibold text-white">502 42 82 82</div> </div> </a> <a href="mailto:twojleasing@me.com" class="flex items-center space-x-3 text-gray-400 hover:text-accent transition-colors group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent rounded-lg"> <div class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center group-hover:bg-accent transition-colors"> <svg class="w-5 h-5 group-hover:text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/> </svg> </div> <div> <div class="text-xs text-gray-500">E-mail</div> <div class="text-sm text-white">twojleasing@me.com</div> </div> </a> </div> </div> <!-- Legal & Social --> <div class="lg:col-span-2"> <h4 class="font-bold text-lg mb-6 text-white">Social Media</h4> <div class="flex space-x-3 mb-8"> <a href="https://www.facebook.com/Apmleasing" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-accent transition-colors group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent" aria-label="Facebook - otwórz w nowej karcie"> <svg class="w-5 h-5 group-hover:text-primary transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path> </svg> </a> <a href="https://piekneauta.otomoto.pl" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-accent transition-colors group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent" aria-label="OtoMoto - otwórz w nowej karcie"> <svg class="w-5 h-5 group-hover:text-primary transition-colors" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/> </svg> </a> </div> <div class="text-xs text-gray-500 space-y-1"> <p>NIP: 6731525915</p> <p>REGON: 330558443</p> </div> </div> </div> <!-- Bottom Bar --> <div class="py-8"> <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm"> <div class="text-gray-400">
+© 2025 Piekne auta — Artur Kurzydłowski. Wszelkie prawa zastrzeżone.
+</div> <div class="flex items-center gap-6"> <a href="/pages/regulamin/" class="text-gray-400 hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">Regulamin</a> <span class="text-gray-700" aria-hidden="true">·</span> <a href="/pages/polityka-prywatnosci/" class="text-gray-400 hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">Polityka prywatności</a> </div> </div> </div> </div> </footer>  <!-- Cookie Banner (imported in pages that need it) --> <script src="/js/sticky-cta-mobile.js"></script>
+<script>
+(function() {
+  const carSliders = document.querySelectorAll('.car-slider');
+  carSliders.forEach(slider => {
+    const slides = slider.querySelectorAll('.car-slide');
+    let currentSlide = 0;
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    setInterval(nextSlide, 3000 + Math.random() * 1000);
+  });
+})();
+</script>
+</body></html> <script type="application/ld+json">{"@context":"https://schema.org/","@type":"Car","name":"Audi Q7 50 TDI mHEV Quattro Black Edition Tiptr","brand":{"@type":"Brand","name":"Audi"},"model":"Q7","vehicleConfiguration":"50 TDI mHEV Quattro Black Edition Tiptr","productionDate":"2019","mileageFromOdometer":{"@type":"QuantitativeValue","value":188000,"unitCode":"KMT"},"fuelType":"Hybryda","vehicleTransmission":"Automat","driveWheelConfiguration":"4x4","color":"Niebieski Nawarra","vehicleEngine":{"@type":"EngineSpecification","engineDisplacement":{"@type":"QuantitativeValue","value":2967,"unitCode":"CMQ"},"enginePower":{"@type":"QuantitativeValue","value":286,"unitCode":"BHP"}},"offers":{"@type":"Offer","price":144900,"priceCurrency":"PLN","availability":"https://schema.org/InStock","seller":{"@type":"AutoDealer","name":"Piekne auta - Artur Kurzydłowski"}}}</script>

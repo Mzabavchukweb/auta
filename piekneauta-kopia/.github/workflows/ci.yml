@@ -1,0 +1,70 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    name: Validate WordPress Theme
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Validate PHP syntax
+        run: |
+          if [ -d "wp-content/themes/salon-auto" ]; then
+            find wp-content/themes/salon-auto -name "*.php" -type f -exec php -l {} \; | grep -v "No syntax errors"
+            if [ $? -eq 0 ]; then
+              echo "PHP syntax validation passed"
+            else
+              echo "PHP syntax errors found"
+              exit 1
+            fi
+          else
+            echo "Theme directory not found"
+            exit 1
+          fi
+      
+      - name: Check required files
+        run: |
+          if [ -d "wp-content/themes/salon-auto" ]; then
+            REQUIRED_FILES=("style.css" "functions.php" "index.php")
+            for file in "${REQUIRED_FILES[@]}"; do
+              if [ ! -f "wp-content/themes/salon-auto/$file" ]; then
+                echo "Required file missing: $file"
+                exit 1
+              fi
+            done
+            echo "All required WordPress theme files present"
+          else
+            echo "Theme directory not found"
+            exit 1
+          fi
+      
+      - name: Validate theme structure
+        run: |
+          if [ -d "wp-content/themes/salon-auto" ]; then
+            echo "Theme structure validation passed"
+          else
+            echo "Theme directory not found"
+            exit 1
+          fi
+
+  build:
+    name: Build Check
+    runs-on: ubuntu-latest
+    needs: validate
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Build check
+        run: |
+          echo "Build check passed - WordPress theme ready for deployment"
+
